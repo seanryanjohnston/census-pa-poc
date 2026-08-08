@@ -1,0 +1,22 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Large, derived, or potentially restricted data.
+data/raw/
+data/interim/
+data/processed/
+data/outputs/
+artifacts/
+
+# Local AI working memory. The public index may be committed.
+.agents/private/
+
+.env
+.env.*
+!.env.example

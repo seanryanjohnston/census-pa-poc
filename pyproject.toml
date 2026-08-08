@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "census-pa-poc"
+version = "0.1.0"
+description = "Python proof of concept for allocating Pennsylvania population data to 2026 precincts"
+requires-python = ">=3.12"
+dependencies = [
+  "geopandas>=1.0",
+  "pandas>=2.2",
+  "pyarrow>=17",
+  "pyogrio>=0.10",
+  "requests>=2.32",
+  "shapely>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3",
+  "ruff>=0.9",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
