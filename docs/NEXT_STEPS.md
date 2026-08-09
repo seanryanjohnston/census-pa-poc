@@ -19,11 +19,34 @@ equal-area overlay changes 12 by 80.904. `PD013` therefore selects the published
 LRC corrected-fragment route for the 2020-to-2021 LRC baseline. Equal-area
 weights remain diagnostic, not population truth.
 
+`POC008` is now in progress with a validated 67-county resolution ledger. The
+ledger currently contains two checksum-frozen candidates (Delaware and
+Philadelphia) and 65
+explicitly unreviewed counties; it is structurally valid but deliberately not
+reported as a frozen statewide snapshot. Pennsylvania assigns election
+administration to its 67 county boards of elections, so county resolutions are
+the authoritative path when no election-effective statewide product exists.
+
+The Pennsylvania DEP eMapPA Voting Districts layer was reviewed and rejected as
+the 2026 shortcut. Its 9,530 feature parts collapse to 9,406 unique county/VTD
+keys, it publishes neither election-effective date nor lineage, and its keys
+match the 2010 VTD benchmark materially more closely than the 2020 benchmark.
+The official 9,178-row 2020 Census VTD file is now cataloged only as a historical
+benchmark, not as a current target.
+
+Delaware County's official 2026 consolidation packet is also frozen. Its Board
+of Elections enacted a net reduction of 45 precincts, from 428 to 383, for the
+2026 primary and later elections. The packet establishes the change and maps
+the affected precincts, but a complete machine-readable boundary snapshot and
+legislative assignments remain unresolved, so the county is still a candidate.
+
 ## What follows
 
 1. `POC008`: inventory authoritative county/state sources and freeze the actual
    November 3, 2026 general-election precinct snapshot with effective/as-of
    dates, checksums, legislative assignments, reviewed gaps, and a cutoff.
+   Work county-by-county in `mappings/precinct_sources_2026.csv`; only change a
+   row to `qualified` after all enforced gates pass.
 2. `POC018`: inventory every earlier even-year general-election snapshot from
    1990 through 2024, using the Philadelphia historical archive as one research
    lead but requiring cycle-specific provenance and unchanged-boundary evidence.

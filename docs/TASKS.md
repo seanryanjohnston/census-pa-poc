@@ -45,7 +45,7 @@ independently confirmed by Department of State candidate requirements.
 | ID | Status | Experiment | Depends on | Done when |
 |---|---|---|---|---|
 | `POC017` | done | Establish the even-year general-election registry for 1990–2026. | — | Election date, cycle role, House scope, regular Senate class, and target snapshot identity are recorded for all 19 cycles. |
-| `POC008` | ready | Freeze the statewide November 3, 2026 general-election precinct snapshot. | `POC017` | All 67 counties have an authoritative source/resolution or a reviewed gap, plus effective/as-of dates, checksums, House/Senate assignments, and a cutoff. |
+| `POC008` | in-progress | Freeze the statewide November 3, 2026 general-election precinct snapshot. | `POC017` | All 67 counties have an authoritative source/resolution or a reviewed gap, plus effective/as-of dates, checksums, House/Senate assignments, and a cutoff. |
 | `POC009` | ready | Reconcile 2021 LRC precincts to the frozen 2026 target. | `POC007`, `POC008` | Added, removed, renamed, and geometry-changed precincts are reported and a 2020-block-to-2026 crosswalk passes statewide QA. |
 | `POC018` | ready | Inventory the precinct snapshot for every earlier even-year general election from 1990 through 2024. | `POC017` | Every cycle references a sourced boundary snapshot or a documented gap; reuse across elections is supported by unchanged-boundary evidence. |
 | `POC020` | deferred | Validate precinct-to-House/Senate assignments and contest eligibility for each cycle. | `POC008`, `POC018` | Precincts are wholly assigned or carry a typed historical split exception; all House contests and the correct staggered Senate class are represented. |
