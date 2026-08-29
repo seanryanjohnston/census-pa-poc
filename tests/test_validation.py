@@ -43,3 +43,18 @@ def test_crosswalk_validation_accepts_multiple_allocations_per_source() -> None:
     checks = validate_crosswalk(frame, 2, {"x", "y"}, 3)
 
     assert all_pass(checks)
+
+
+def test_crosswalk_validation_allows_numerical_weight_sum_noise() -> None:
+    frame = pd.DataFrame(
+        {
+            "source_block_geoid": ["a", "a"],
+            "target_precinct_geoid": ["x", "y"],
+            "weight": [0.5, 0.5000000000005],
+            "assignment_status": ["assigned", "assigned"],
+        }
+    )
+
+    checks = validate_crosswalk(frame, 1, {"x", "y"}, 2)
+
+    assert all_pass(checks)

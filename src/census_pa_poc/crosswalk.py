@@ -17,8 +17,8 @@ AREA_SLIVER_TOLERANCE = 5e-6
 
 
 def canonical_lrc_source_block_id(value: str) -> str:
-    """Map an LRC corrected A/B fragment ID back to its Census block ID."""
-    if len(value) == 16 and value[-1] in {"A", "B"}:
+    """Map an LRC corrected A/B/C fragment ID back to its Census block ID."""
+    if len(value) == 16 and value[-1] in {"A", "B", "C"}:
         return value[:-1]
     return value
 

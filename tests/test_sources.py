@@ -2,7 +2,10 @@ from __future__ import annotations
 
 from zipfile import ZipFile
 
-from census_pa_poc.sources import load_pl94_block_population
+from census_pa_poc.sources import (
+    load_pl94_block_population,
+    load_pl94_block_population_statewide,
+)
 
 
 def _row(size: int, values: dict[int, str]) -> str:
@@ -40,4 +43,11 @@ def test_load_pl94_block_population_filters_and_joins(tmp_path) -> None:
 
     assert result.to_dict("records") == [
         {"source_block_geoid": "420410001001001", "P0010001": 17}
+    ]
+
+    statewide = load_pl94_block_population_statewide(archive)
+
+    assert statewide.to_dict("records") == [
+        {"source_block_geoid": "420410001001001", "P0010001": 17},
+        {"source_block_geoid": "420430001001001", "P0010001": 23},
     ]

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "census-pa-poc"
 version = "0.1.0"
-description = "Python proof of concept for allocating Pennsylvania population data to 2026 precincts"
+description = "Python proof of concept for Pennsylvania fixed-geography population allocation"
 requires-python = ">=3.12"
 dependencies = [
   "geopandas>=1.0",
@@ -31,4 +31,3 @@ target-version = "py312"
 
 [tool.setuptools.packages.find]
 where = ["src"]
-

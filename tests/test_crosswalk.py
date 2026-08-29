@@ -95,6 +95,7 @@ def test_direct_profile_reports_duplicate_split_source() -> None:
 def test_corrected_fragment_ids_map_to_parent_block() -> None:
     assert canonical_lrc_source_block_id("421010119002007A") == "421010119002007"
     assert canonical_lrc_source_block_id("421010119002007B") == "421010119002007"
+    assert canonical_lrc_source_block_id("420912087041000C") == "420912087041000"
     assert canonical_lrc_source_block_id("421010119002008") == "421010119002008"
 
 

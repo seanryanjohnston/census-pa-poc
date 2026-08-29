@@ -8,6 +8,8 @@ from pathlib import Path
 
 import pandas as pd
 
+WEIGHT_SUM_TOLERANCE = 1e-12
+
 
 def logical_frame_hash(frame: pd.DataFrame, sort_by: list[str]) -> str:
     """Hash stable CSV bytes for a logically sorted table."""
@@ -26,6 +28,7 @@ def validate_crosswalk(
     expected_rows = expected_allocation_row_count or expected_source_count
     assigned = frame[frame["assignment_status"] == "assigned"]
     weight_sums = assigned.groupby("source_block_geoid")["weight"].sum()
+    weight_sum_deviations = weight_sums.sub(1.0).abs()
     supported_targets = set(assigned["target_precinct_geoid"].dropna())
     return [
         _check("allocation_row_count", len(frame) == expected_rows, len(frame)),
@@ -46,9 +49,15 @@ def validate_crosswalk(
         ),
         _check(
             "weights_sum_to_one",
-            bool(weight_sums.eq(1.0).all())
+            bool(weight_sum_deviations.le(WEIGHT_SUM_TOLERANCE).all())
             and len(weight_sums) == expected_source_count,
-            int((~weight_sums.eq(1.0)).sum()),
+            {
+                "outside_tolerance": int(
+                    weight_sum_deviations.gt(WEIGHT_SUM_TOLERANCE).sum()
+                ),
+                "maximum_absolute_deviation": float(weight_sum_deviations.max()),
+                "tolerance": WEIGHT_SUM_TOLERANCE,
+            },
         ),
         _check(
             "all_targets_supported",
