@@ -44,7 +44,7 @@ def test_tracked_inventory_passes_contract_but_is_not_frozen() -> None:
     assert result.passed
     assert not result.frozen
     assert result.row_count == 67
-    assert result.status_counts == {"candidate": 2, "unreviewed": 65}
+    assert result.status_counts == {"candidate": 13, "unreviewed": 54}
 
 
 def test_qualified_requires_verified_assignments_and_cutoff(tmp_path) -> None:
@@ -93,3 +93,28 @@ def test_candidate_requires_frozen_source_evidence(tmp_path) -> None:
     assert not result.passed
     assert "county 001: sha256 is required for candidate" in result.errors
     assert "county 001: effective_date is required for candidate" not in result.errors
+
+
+def test_reviewed_gaps_count_as_resolved_for_freeze(tmp_path) -> None:
+    rows = [_row(fips, name) for fips, name in COUNTIES.items()]
+    for row in rows:
+        row.update(
+            {
+                "resolution_status": "reviewed_gap",
+                "schema_status": "gap",
+                "house_assignment_status": "reviewed_gap",
+                "senate_assignment_status": "reviewed_gap",
+                "contest_eligibility_status": "reviewed_gap",
+                "cutoff_status": "exception",
+                "reviewed_at": "2026-08-29",
+                "review_notes": "No authoritative public boundary source found.",
+            }
+        )
+    path = tmp_path / "inventory.csv"
+    _write(path, rows)
+
+    result = validate_inventory(path)
+
+    assert result.passed
+    assert result.frozen
+    assert result.status_counts == {"reviewed_gap": 67}

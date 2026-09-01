@@ -1,59 +1,56 @@
-# POC validation gates
+# Direct legislative validation gates
 
-Each experiment emits machine-readable checks plus a short Markdown report.
+Every accepted partition must pass:
 
-## Input gate
+1. Exact source files and plan inputs match frozen SHA-256 checksums.
+2. Product, source grain, metric, chamber, plan vintage, and applicable
+   elections are explicit.
+3. Every supported source has weights summing to one within tolerance, except
+   an explicitly typed zero-estimate exception.
+4. The expected 203 House or 50 Senate districts are present.
+5. The allocated statewide estimate conserves the source total.
+6. ACS estimates and 90% MOEs remain separate; the MOE aggregation method and
+   omitted uncertainty are declared.
+7. No precinct identity or precinct artifact is consumed.
+8. No nearest-boundary assignment is used.
+9. Crosswalk and result logical hashes are immutable and replay identically.
 
-- URL, retrieval timestamp, size, and SHA-256 match the manifest.
-- Product, reference period, release/effective date, population universe,
-  access terms, CRS, and schema are explicit.
-- The fixed precinct target and each Senate plan have exact source, reference
-  and effective vintage, retrieval timestamp, checksum, license/access terms,
-  CRS, schema, and geographic universe.
-- Required IDs are strings, preserve leading zeros, and are unique at the
-  stated grain.
-- Geometries are present, valid or repaired by a recorded rule, and comparable
-  in a suitable projected CRS for area operations.
+`POC030` adds repository-level gates:
 
-## Crosswalk gate
+- every moved precinct-era path is listed in the archive manifest;
+- shared legacy-named modules retained by the direct dependency graph are
+  listed with a reason;
+- active mappings contain no precinct target fields;
+- the explorer loads all 78 direct partitions and both chambers;
+- active tests, lint, marimo static checks, and an executed notebook render
+  pass after the archive moves.
 
-- Each in-scope source feature has one or more allocations or a typed exception.
-- Weights are finite and in `[0, 1]`.
-- Weights sum to one per source within a declared tolerance.
-- Every target precinct and Senate district has support or a reviewed
-  zero-population exception.
-- Method, version, source vintage, target vintage, weighting universe, and
-  diagnostics are columns in the artifact—not notebook prose.
-- State Senate district and regular-contest eligibility are separate from
-  precinct identity. Fixed precincts that cross a period Senate boundary retain
-  multiple allocation rows rather than a forced single-district assignment.
-- Nearest-boundary assignment cannot satisfy coverage. Material uncovered
-  populated area fails the gate; water-only and numerical-precision exceptions
-  must be typed and quantified.
-- A populated direct-geometry linework exception may be retained only as a
-  diagnostic when a frozen published relationship/direct assignment supplies
-  complete support; the published route and affected population must be
-  explicit. This does not convert area into population truth.
+`POC031` adds metric-specific gates:
 
-## Result gate
+- the selected field is exactly PL 94-171 P3 `P0030001`, universe Total
+  population 18 years and over;
+- LRC fragment P3 sums equal Census File 02 P3 for every parent block;
+- VAP never exceeds total population on any fragment;
+- the allocation methods and weighting-universe declarations name P3 rather
+  than P1;
+- both current chambers conserve 10,353,548 VAP and equal the direct fragment
+  sums; and
+- MOE is explicitly not applicable to the exact decennial count.
 
-- Source and allocated state/county totals agree within the method's explicit
-  rounding tolerance.
-- Result grain is unique by population product, source vintage, fixed target,
-  Senate plan, general election, crosswalk version, precinct/Senate fragment,
-  metric, and universe.
-- Population-product release date is retained so availability relative to the
-  election cutoff can be evaluated without reconstructing provenance.
-- Direct/published and independently spatial results are diffed where both
-  exist.
-- ACS estimates and margins of error are kept separate; no MOE is summed as if
-  it were a count.
+`POC034` adds notebook audit gates:
 
-## Reproducibility gate
-
-- Identical inputs and config produce identical logically sorted crosswalk and
-  result hashes.
-- Tests include at least a split source, boundary-coincident representative
-  point, multipart target, water-only feature, and invalid polygon.
-- A rerun never overwrites an accepted crosswalk; a changed input or method
-  creates a new version.
+- the Census P1 and P3 Pennsylvania benchmarks are read independently from the
+  official block files rather than copied from either chamber result;
+- all 203 House and 50 Senate districts are present and each chamber sum has
+  zero difference from its state benchmark for both metrics;
+- split blocks are discovered from the accepted P1 and P3 crosswalk rows and
+  their weights sum to one;
+- current-plan P1 and P3 each report one House-split block and no Senate-split
+  blocks, with block `421010257002008` assigned to House districts 194 and 200;
+- one bounded context map is rendered for each impacted district; both maps
+  include the complete impacted pair, label districts 194 and 200 directly,
+  and mark the split block on their shared boundary;
+- the notebook uses bounded charts and a selected-block fragment map instead
+  of a statewide 203-bar or full-plan polygon display; and
+- static checks, the full test suite, a live metric-selector check, and an
+  executed HTML render pass.

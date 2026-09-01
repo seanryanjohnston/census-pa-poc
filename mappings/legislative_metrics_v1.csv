@@ -1,0 +1,2 @@
+metric_partition_id,source_product_id,source_table_id,source_estimate_metric_id,metric_label,population_universe,source_grain,target_plan_reference_vintage,applicable_general_elections,method_id,moe_treatment,status
+dec_2020_vap,census_2020_pa_pl,P3,P0030001,Voting-age population,Total population 18 years and over,census_2020_tabulation_block,2021,2022-11-08|2024-11-05|2026-11-03,lrc_fragment_p003_vap_direct_legislative_v1,not_applicable_exact_decennial_count,accepted

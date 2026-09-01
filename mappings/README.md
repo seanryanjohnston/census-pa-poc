@@ -1,44 +1,33 @@
-# Planning mappings
+# Active planning mappings
 
-These tracked CSV files turn the current plan into inputs Python can read:
+- `legislative_plans_v1.csv` freezes the eight official House/Senate plan
+  sources, checksums, district fields, vintages, and election applicability.
+- `legislative_population_partitions_v1.csv` lists the 39 accepted
+  product/plan-vintage combinations. The direct code expands these to 78 House
+  and Senate partitions without precinct identity.
+- `acs5_products.csv` inventories the 16 accepted ACS five-year releases,
+  exact B01003 estimate/MOE fields, release dates, access routes, and metadata
+  hashes.
+- `population_periods.csv` summarizes the implemented total-population source
+  families and direct legislative routes.
+- `legislative_metrics_v1.csv` identifies the separately proven 2020 P3 VAP
+  partition, exact universe, current-plan applicability, and no-MOE treatment.
+- `additive_metric_definitions_v1.csv` freezes the remaining P0 aggregate
+  expressions, universes, grains, support candidates, cutoff policies, and MOE
+  handling. Education uses full-series block-group `B15002`; employment uses
+  full-series tract `B23001` and never treats its zero-filled legacy
+  block-group placeholders as observations; poverty preserves the seven
+  directly published block-group `C17002` bands and uses its parent only for
+  conservation and post-allocation shares.
+- `model_election_years_v1.csv` is the active 18-cycle House/Senate panel
+  spine. It records exact general-election dates, the plan used by each
+  chamber, and the alternating regular State Senate contest class without
+  reintroducing archived precinct fields.
+- `crosswalk_methods.csv` lists only active direct method families.
+- Direct source provenance is preserved by the exact module declarations and
+  accepted input manifests. The mixed pre-pivot source catalog and
+  precinct-only planning ledgers are in `archive/precinct_v1/mappings/`.
 
-- `population_periods.csv` maps requested observations to candidate official
-  products, availability, and allocation routes.
-- `acs5_products.csv` inventories all 16 ACS five-year products from 2005–2009
-  through 2020–2024 with exact release dates, block-group identity,
-  estimate/MOE fields, access route, and per-vintage API metadata checksums.
-- `election_cycles.csv` enumerates all 19 even-year general-election cycles,
-  assigns the fixed 2021 LRC precinct target, and records the applicable Senate
-  plan and staggered regular Senate class.
-- `senate_plans.csv` records the five official LRC plan sources needed for
-  1990–2026. All five are checksum-frozen and passed the `POC022` source and
-  split-aware overlay gates; topology normalization remains explicit under
-  `PD017` and area weights are not population weights.
-- `precinct_sources_2026.csv` is the 67-county `POC008` resolution ledger. It
-  keeps source qualification, election-effective dates, checksums, legislative
-  assignments, contest eligibility, and the operational cutoff separate.
-- `source_catalog.csv` records confirmed sources and research candidates.
-- `crosswalk_methods.csv` defines distinct method families and proof status.
-
-`POC011` adds the frozen 2010 PL, block geometry, and 2010→2020 relationship
-sources. `relationship_atomic_area_2010_v1` is the accepted 2010 POC baseline
-under `PD018`; `direct_atomic_area_2010_v1` is its diagnostic. Both are area
-methods and neither may be described as a population-informed crosswalk.
-
-`candidate` and `research` rows are not approved data. Missing checksums,
-licenses, vintages, or schemas must be filled from an actual retrieval manifest
-before an input passes `POC001` or later source gates.
-
-For `precinct_sources_2026.csv`, `candidate` means a source has been retrieved
-and frozen but has not met every 2026 target gate. `qualified` requires a
-published effective date, verified schema and House/Senate/contest assignments,
-and a met cutoff. `reviewed_gap` requires dated review notes. `unreviewed` never
-counts as a gap resolution.
-
-`fixed_poc_baseline` means every cycle intentionally reuses the 2021 LRC
-precinct geography under `PD014`; it is not a claim about the precinct snapshot
-actually in force for that election.
-
-`proven_cumberland` means the method passed the accepted Cumberland experiment;
-it does not approve the method for Philadelphia, statewide use, historical
-source units, Senate overlays, or coarser ACS inputs.
+Mappings are executable planning inputs, not replacements for source manifests
+or partition QA. No active mapping contains a precinct target or selects a
+precinct-derived product.

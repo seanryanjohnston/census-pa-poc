@@ -1,82 +1,78 @@
-# Census PA Python proof of concept
+# Census PA direct legislative proof of concept
 
-This repository answers one narrow question before production architecture is
-resumed:
+This repository proves that selected Census and ACS total-population products
+can be allocated directly to the Pennsylvania State House and State Senate
+plans applicable from 1992 through 2026. Precinct geography is neither a target
+nor an intermediate in the accepted pipeline.
 
-> Can selected Census and ACS total-population products be reproducibly
-> allocated to the Pennsylvania precinct snapshot used for each even-year
-> general election from 1990 through 2026, with understandable error and
-> conserved totals?
-
-The first repository (`census-pa-map`) proved that the required 2020 Census and
-2021 Pennsylvania LRC files exist and are mutually usable for Cumberland
-County. This repository has now saved and verified the Cumberland mechanics
-proof and the Philadelphia split-block method comparison. The current boundary
-of the proof is recorded in [docs/PROOF_STATUS.md](docs/PROOF_STATUS.md).
-
-## Approach
-
-1. Reproduce the existing Cumberland source checks in saved Python code.
-2. Test the apparent direct 2020-block-to-2021-precinct assignment in the LRC
-   data and compare it with an independently computed spatial assignment.
-3. Aggregate 2020 total population and prove coverage and conservation.
-4. Repeat on a difficult county, choose the evidence-backed baseline, then go
-   statewide after the election-specific target is frozen.
-5. Freeze/reconcile the actual November 3, 2026 general-election target.
-6. Inventory the distinct precinct snapshots used by every two-year general
-   election cycle back through 1990.
-7. Add 2010, 2000, and 1990 one at a time and make each source allocatable to
-   the relevant election snapshot.
-8. Inventory available mid-decade products, then implement their coarser
-   block-group allocation as a separate method family.
-
-This ordering is intentional: no catalog service, database schema, web app, or
-workflow engine is needed to answer the POC question.
+`POC029` accepts 78 immutable product/plan/chamber partitions across 20
+population products, eight official legislative plans, 203 House districts,
+and 50 Senate districts. `POC030` archives the abandoned precinct route under
+`archive/precinct_v1/` while preserving source/parsing components still used by
+the direct proof. `POC031` separately accepts 2020 PL 94-171 P3 voting-age
+population on both 2021 Final plans without reusing total-population weights.
+`POC032` adds those two partitions to the explorer behind a distinct metric
+selector. `POC036` proves continuous education, employment, and poverty
+aggregates. `POC039` closes the POC with complete model-ready House and Senate
+CSV panels for every general-election year from 1992 through 2026.
 
 ## Repository map
 
-- [docs/PROJECT.md](docs/PROJECT.md): scope and lower-level goals.
-- [docs/TASKS.md](docs/TASKS.md): authoritative experiment backlog.
-- [docs/PROOF_STATUS.md](docs/PROOF_STATUS.md): what is and is not proven.
-- [docs/DECISIONS.md](docs/DECISIONS.md): accepted and open choices.
-- [docs/VALIDATION.md](docs/VALIDATION.md): evidence required for each proof.
-- [docs/CUMBERLAND_2020_PROOF.md](docs/CUMBERLAND_2020_PROOF.md): accepted
-  evidence for `POC001`–`POC005`.
-- [docs/PHILADELPHIA_2020_PROOF.md](docs/PHILADELPHIA_2020_PROOF.md): accepted
-  source and method evidence for `POC006`–`POC007`.
-- [mappings/README.md](mappings/README.md): machine-readable planning maps.
-- `.agents/private/`: local AI working memory; never canonical.
+- `docs/POC029_STATUS.md`: accepted direct historical result and limitations.
+- `docs/DIRECT_LEGISLATIVE_CROSSWALK_PROOF.md`: accepted 2020 baseline.
+- `docs/POC030_ARCHIVE.md`: archive inventory, retained dependencies, and QA.
+- `docs/POC031_VAP_PROOF.md`: accepted current-plan voting-age population proof.
+- `docs/POC039_STATUS.md`: accepted district/election CSV contract, source
+  timing, transformations, limitations, and hashes.
+- `data/exports/model_features/v2/`: corrected cutoff-safe model-facing CSVs,
+  source-selection table, data dictionary, and usage README.
+- `docs/TASKS.md`: active and completed direct-route tasks.
+- `mappings/legislative_plans_v1.csv`: official House/Senate plan registry.
+- `mappings/legislative_population_partitions_v1.csv`: accepted product/plan
+  applicability without precinct identity.
+- `notebooks/explore_population.py`: read-only direct House/Senate explorer.
+- `archive/precinct_v1/`: frozen precinct-era code, mappings, docs, evidence,
+  and ignored generated data.
 
-## Intended Python shape
+## Replay the accepted direct proof
 
-Exploratory notebooks may visualize or inspect results, but reusable work moves
-into small functions under `src/census_pa_poc/` and is exercised by tests.
-Generated crosswalks, data, and reports remain uncommitted until their source
-terms and release policy are decided.
-
-## Run the Cumberland proof
-
-The raw archives and generated products are intentionally ignored. After the
-three exact archives in `src/census_pa_poc/cumberland.py` have been placed at
-their documented `data/raw/` paths:
+After placing checksum-frozen raw inputs at the paths recorded by the modules:
 
 ```bash
-python3.12 -m venv .venv
-.venv/bin/python -m pip install -e '.[dev]'
-.venv/bin/python -m census_pa_poc.cumberland --root .
-.venv/bin/ruff format --check src tests
-.venv/bin/ruff check src tests
+.venv/bin/python -m census_pa_poc.legislative_plans --root .
+.venv/bin/python -m census_pa_poc.direct_legislative_decennial --root .
+.venv/bin/python -m census_pa_poc.direct_legislative_acs --root .
+.venv/bin/python -m census_pa_poc.direct_legislative_acceptance --root .
+.venv/bin/python -m census_pa_poc.direct_legislative_vap --root .
+.venv/bin/python -m census_pa_poc.decennial_socioeconomic --root .
+.venv/bin/python -m census_pa_poc.model_export --root .
+```
+
+The commands reuse identical immutable artifacts and reject changed content at
+an accepted versioned path.
+
+## Explore the results
+
+```bash
+.venv/bin/python -m pip install -e '.[dev,explore]'
+.venv/bin/marimo run notebooks/explore_population.py
+```
+
+The primary explorer is a compact audit of the 2021 Final House and Senate
+plans used in 2026. It independently reconciles both chambers to the Census
+state total for P1 total population and P3 voting-age population, then exposes
+the accepted split-block allocation, one context map per impacted district,
+and corrected-fragment geometry. Historical and ACS results remain preserved
+in the accepted direct artifacts rather than being crowded into the primary
+notebook.
+
+## Validate
+
+```bash
+.venv/bin/ruff check .
 .venv/bin/pytest -q
+.venv/bin/marimo check notebooks/explore_population.py
 ```
 
-The run verifies source checksums before parsing. Versioned crosswalks are
-created once; a rerun reuses an identical artifact and refuses to overwrite a
-different artifact at the same method-version path.
-
-Run the Philadelphia source and complex-county proof after also placing the
-checksum-frozen City Political Divisions GeoJSON at the path recorded in
-`src/census_pa_poc/philadelphia.py`:
-
-```bash
-.venv/bin/python -m census_pa_poc.philadelphia --root .
-```
+Raw, generated, and archived data remain ignored pending a licensing and
+redistribution decision.

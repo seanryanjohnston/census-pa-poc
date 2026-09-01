@@ -5,13 +5,15 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "census-pa-poc"
 version = "0.1.0"
-description = "Python proof of concept for Pennsylvania fixed-geography population allocation"
+description = "Python proof of concept for direct Pennsylvania legislative population allocation"
 requires-python = ">=3.12"
 dependencies = [
   "geopandas>=1.0",
   "pandas>=2.2",
   "pyarrow>=17",
   "pyogrio>=0.10",
+  "pdfplumber>=0.11",
+  "Pillow>=11",
   "requests>=2.32",
   "shapely>=2.0",
 ]
@@ -21,13 +23,24 @@ dev = [
   "pytest>=8.3",
   "ruff>=0.9",
 ]
+explore = [
+  "altair>=5.5",
+  "folium>=0.19",
+  "mapclassify>=2.8",
+  "matplotlib>=3.9",
+  "marimo>=0.16",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
 [tool.ruff]
+exclude = ["archive"]
 line-length = 88
 target-version = "py312"
+
+[tool.ruff.lint.per-file-ignores]
+"notebooks/*.py" = ["PLR1711"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

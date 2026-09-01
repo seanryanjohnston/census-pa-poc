@@ -126,7 +126,10 @@ class InventoryValidation:
 
     @property
     def frozen(self) -> bool:
-        return self.passed and self.status_counts == {"qualified": 67}
+        resolved = self.status_counts.get("qualified", 0) + self.status_counts.get(
+            "reviewed_gap", 0
+        )
+        return self.passed and resolved == len(COUNTIES)
 
     def as_dict(self) -> dict[str, object]:
         return {
@@ -145,9 +148,11 @@ def load_inventory(path: Path) -> tuple[list[dict[str, str]], list[str]]:
         fields = tuple(reader.fieldnames or ())
         rows = list(reader)
 
-    errors = [] if fields == INVENTORY_FIELDS else [
-        f"header must exactly equal {','.join(INVENTORY_FIELDS)}"
-    ]
+    errors = (
+        []
+        if fields == INVENTORY_FIELDS
+        else [f"header must exactly equal {','.join(INVENTORY_FIELDS)}"]
+    )
     return rows, errors
 
 
@@ -262,7 +267,9 @@ def _status_evidence_errors(prefix: str, row: dict[str, str]) -> list[str]:
         if not _text(row, field).strip()
     ]
     digest = _text(row, "sha256")
-    if digest and (len(digest) != 64 or any(char not in "0123456789abcdef" for char in digest)):
+    if digest and (
+        len(digest) != 64 or any(char not in "0123456789abcdef" for char in digest)
+    ):
         errors.append(f"{prefix}: sha256 must be 64 lowercase hexadecimal characters")
     if status == "qualified":
         errors.extend(_qualified_status_errors(prefix, row))

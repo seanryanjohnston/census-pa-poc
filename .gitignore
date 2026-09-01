@@ -12,7 +12,15 @@ data/raw/
 data/interim/
 data/processed/
 data/outputs/
+data/exports/
 artifacts/
+
+# POC030 keeps generated data and proof artifacts locally in a recoverable
+# archive, but their licensing/versioning status is unchanged.
+archive/precinct_v1/data/
+archive/precinct_v1/artifacts/
+archive/precinct_v1/notebooks/*.session*.json
+notebooks/__marimo__/
 
 # Local AI working memory. The public index may be committed.
 .agents/private/

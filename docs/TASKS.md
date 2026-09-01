@@ -1,114 +1,49 @@
-# Experiment backlog
+# Direct legislative experiment backlog
 
-This is the authoritative POC task list. Status values are `ready`, `blocked`,
-`in-progress`, `done`, and `deferred`. A task is `done` only with the evidence in
-its "Done when" column.
-
-Completed evidence: `POC001`–`POC005` — the saved Python run verifies all three
-source hashes, 5,609 exact Cumberland block keys, 119 precincts, EPSG:4269, and
-259,469 people. Every LRC block has one published precinct key; both versioned
-crosswalks cover every block/target and conserve population. Direct and
-representative-point assignments agree on all 5,609 blocks and reproduce all
-119 LRC precinct totals exactly. Machine-readable local evidence is under
-`artifacts/poc001_poc005/`; accepted evidence is summarized in
-`docs/CUMBERLAND_2020_PROOF.md`.
-
-Completed evidence: `POC006`–`POC007` — the saved Philadelphia run qualifies a
-checksum-frozen City Political Divisions candidate and proves 13 LRC corrected
-split blocks covering 931 people. The published corrected-fragment method
-reconciles exactly to all 1,703 precinct totals; representative points change
-eight precincts by 162 total absolute persons and equal-area overlay changes 12
-precincts by 80.904 total absolute persons. Machine-readable local evidence is
-under `artifacts/poc006_poc007/`; accepted evidence is summarized in
-`docs/PHILADELPHIA_2020_PROOF.md`.
-
-`POC017` — `mappings/election_cycles.csv` records all 19
-even-year general elections from 1990 through 2026. Dates follow Pennsylvania
-Election Code section 601; House scope and four-year staggered Senate classes
-follow the Pennsylvania Constitution, with the even-numbered 2026 class
-independently confirmed by Department of State candidate requirements. Under
-`PD014`, every row now targets the fixed 2021 LRC precinct geography; Senate
-plan identity remains cycle-specific.
-
-Completed evidence: `POC021` — the saved statewide audit proves complete LRC
-baseline coverage for all 336,985 Census parent blocks, 337,039 corrected
-fragments, and 9,178 fixed precincts. Fifty-three parent blocks are split. No
-assigned representative point falls outside its target and no nearest assignment
-is used. The second run reproduced all logical artifact hashes. Accepted
-evidence is summarized in `docs/STATEWIDE_FIXED_GEOGRAPHY_PROOF.md`.
-
-Completed evidence: `POC022` — all five official Senate plans are
-checksum-frozen and source-profiled. The accepted `v3` overlay covers all 9,178
-fixed precincts and all 50 districts per plan, preserves 997–1,126 historical
-precinct crossings, types zero-population linework gaps, uses no nearest
-assignments, and reproduced five immutable GeoParquet hashes. Accepted evidence
-is summarized in `docs/STATE_SENATE_OVERLAY_PROOF.md`.
-
-Completed evidence: `POC010` — the statewide result covers all 336,985 Census
-parent blocks, 337,039 corrected fragments, 9,178 fixed precincts, 67 counties,
-and 50 current-plan Senate districts. It conserves 13,002,700 people at state
-and county levels. The accepted fixed-precinct/Senate route and the independent
-official block-equivalency route agree exactly in every district. The second
-run reused all five immutable artifacts identically. Accepted evidence is
-summarized in `docs/STATEWIDE_2020_RESULT.md`.
-
-Completed evidence: `POC014` — all 16 overlapping ACS five-year products from
-2005–2009 through 2020–2024 have exact periods, official release dates,
-block-group product identities, estimate/MOE fields, access routes, and 32
-checksum-frozen API metadata files. Four early API manifests omit block groups
-and are explicitly routed through official Summary Files; the 1990s gap remains
-explicit. Accepted evidence is summarized in
-`docs/ACS5_PRODUCT_INVENTORY.md`.
-
-Completed evidence: `POC011` — 421,545 official 2010 blocks and 12,702,379
-people allocate to all 9,178 fixed precincts and all 50 districts of the 2001
-Final Senate plan. Direct atomic area and official relationship-assisted atomic
-area routes both conserve state and source-county totals, retain measured method
-deltas, and use no nearest assignments. Thirty-nine QA checks pass and the
-second run reused all five immutable artifacts. Accepted evidence is summarized
-in `docs/STATEWIDE_2010_RESULT.md`.
-
-## Core method proof
+Status values are `ready`, `in-progress`, `done`, `blocked`, and `deferred`.
+The full precinct-era task ledger is frozen at
+`archive/precinct_v1/docs/TASKS_PRE_POC030.md`.
 
 | ID | Status | Experiment | Depends on | Done when |
 |---|---|---|---|---|
-| `POC001` | done | Reproduce the prior `S001`–`S003` Cumberland source gate in Python. | — | A saved test/script verifies checksums, required fields, 5,609 exact block keys, 119 precincts, CRS, and total 259,469 from fresh or cached inputs. |
-| `POC002` | done | Profile LRC Release 1b block fields for a direct corrected precinct assignment. | `POC001` | A report proves whether every Cumberland block has one usable precinct key and records duplicate, null, and split cases. |
-| `POC003` | done | Build the versioned direct/published Cumberland crosswalk. | `POC002` | Allocation rows include source block, target precinct, weight, method/version, and diagnostics; coverage and weight checks pass. |
-| `POC004` | done | Independently build a representative-point spatial crosswalk. | `POC001` | Every block is assigned or has a typed exception; boundary tie-breaking is deterministic. |
-| `POC005` | done | Aggregate 2020 `P0010001` to Cumberland precincts and compare methods. | `POC003`, `POC004` | County total is 259,469, all 119 targets are accounted for, direct and spatial results are diffed, and LRC precinct totals are reconciled. |
-| `POC006` | done | Select and acquire a Philadelphia complex-county boundary candidate. | Owner decision recorded in `PD012` | Source provenance, edge cases, and expected coverage are recorded. |
-| `POC007` | done | Compare direct, point, and split-aware allocation on the complex county. | `POC005`, `POC006` | The share of blocks/population affected and precinct-level deltas support a documented method choice. |
+| `POC028` | done | Prove a chamber-neutral direct 2020 Census crosswalk to both 2021 Final plans. | Accepted Census/LRC source gates | Both chambers cover every source and district, conserve 13,002,700 people, use no precinct identity, and replay identically. |
+| `POC029` | done | Extend the direct contract to applicable historical House/Senate plans and all accepted decennial/ACS products. | `POC028` | All 78 partitions declare provenance, applicability, weighting, fallback, uncertainty, QA, and hashes; none uses precinct input. |
+| `POC030` | done | Archive precinct-only code, tasks, mappings, and ignored data; pivot the explorer and active workflow. | `POC029` | The archive manifest distinguishes moved and retained-shared material; active mappings and commands select direct products only; the direct notebook and replay checks pass. |
+| `POC031` | done | Select and prove the next additive Census/ACS metric on the direct legislative contract. | `POC030` | One exact metric/table/universe is selected; support validity and MOE treatment are explicit; both chambers pass conservation and replay without assuming total-population weights generalize. |
+| `POC032` | done | Add the accepted VAP partition to the direct legislative explorer. | `POC031` | Metric and product selectors cannot conflate total population with VAP; both current chambers render P3 VAP with its method and no-MOE treatment visible; notebook checks and tests pass. |
+| `POC033` | done | Freeze the exact product and variable inventory for the remaining P0 additive-metric bundle. | `POC032` | Remaining VAP vintages, CVAP, age, race/ethnicity, foreign-born/citizenship, education, employment, poverty, household-income bands, and tenure have exact tables, additive category definitions, universes, source grains, vintages, release cutoffs, plan applicability, support candidates, category bridges, and MOE treatment; density has an exact land-area definition; no P1 or P3 weight is assumed valid for another universe. |
+| `POC034` | done | Simplify the current-plan notebook around statewide reconciliation and split-block inspection. | `POC032` | Independent Census state totals reconcile exactly to the 203 House and 50 Senate district sums for each accepted current-plan metric; split blocks come from the accepted metric-specific crosswalks; compact maps/tables show the fragment allocations without an unreadable statewide district visual; notebook checks, tests, and an executed render pass. |
+| `POC035` | deferred | Prove the eligible-electorate and demographic person-count bundle: remaining VAP vintages, CVAP, age bands, race/ethnicity, and foreign-born/citizenship. | `POC033` | Each exact product/table/universe is allocated to both applicable chambers and plans with separately justified support, estimate and MOE handling, conserved additive categories, valid parent/subgroup relationships, explicit cross-vintage category bridges, immutable hashes, and identical replay. The accepted 2020 P2 stage remains usable, but unfinished families do not block the model-ready POC export. |
+| `POC036` | done | Prove the ACS socioeconomic person-count bundle: education attainment, employment status, and poverty-ratio bands. | `POC033` | Each age- or poverty-defined universe has conserved additive categories for both applicable chambers and plans; rates and shares are derived only after allocation from compatible numerators and denominators; support limitations, MOEs, cutoff eligibility, QA, immutable hashes, and replay are explicit. |
+| `POC037` | deferred | Prove the household and occupied-housing bundle: household-income bands and housing tenure. | `POC033` | Household- and occupied-housing-unit support are proven separately from person-population weights; additive bands/categories conserve for both applicable chambers and plans; shares and any approximate median are derived after allocation; MOEs, dollar-year/bin bridges, QA, immutable hashes, and replay are explicit. This production-quality extension no longer blocks the POC export. |
+| `POC038` | deferred | Derive Census-land-area population density for every accepted cutoff-eligible total-population partition. | `POC033` | District land area is reproducible in the declared equal-area CRS; population, land area, density, and log-density retain product/plan identity; zero-area and multipart cases are tested; results have immutable hashes and identical replay. The POC export may instead label a readily reproducible total-polygon-area density and must not call it land-area density. |
+| `POC039` | done | Produce the model-ready district-by-election CSV bundle and close the POC. | `POC029`, `POC031`, completed `POC035` stage, `POC036` | House and Senate CSVs contain exactly one row per district for every general-election year from 1992 through 2026; every included feature uses a reference period ending on or before the election, provenance and transformations are explicit, keys are unique, district coverage and temporal/conservation smell tests pass, files replay byte-identically, and canonical proof status records the POC complete with deferred metric families. |
 
-## Election geography
+## Completion evidence
 
-| ID | Status | Experiment | Depends on | Done when |
-|---|---|---|---|---|
-| `POC017` | done | Establish the even-year general-election registry for 1990–2026. | — | Election date, cycle role, fixed target identity, Senate plan identity, House scope, and regular Senate class are recorded for all 19 cycles. |
-| `POC008` | deferred | Freeze the statewide November 3, 2026 general-election precinct snapshot for later production fidelity. | `POC017` | All 67 counties have an authoritative source/resolution or a reviewed gap, plus effective/as-of dates, checksums, House/Senate assignments, and a cutoff. |
-| `POC009` | deferred | Reconcile 2021 LRC precincts to the actual 2026 target for later production fidelity. | `POC007`, `POC008` | Added, removed, renamed, and geometry-changed precincts are reported and a 2020-block-to-2026 crosswalk passes statewide QA. |
-| `POC018` | deferred | Inventory the actual precinct snapshot for every earlier even-year general election from 1990 through 2024. | `POC017` | Every cycle references a sourced boundary snapshot or a documented gap; reuse across elections is supported by unchanged-boundary evidence. |
-| `POC020` | deferred | Validate precinct-to-House/Senate assignments and contest eligibility for each cycle. | `POC008`, `POC018` | Precincts are wholly assigned or carry a typed historical split exception; all House contests and the correct staggered Senate class are represented. |
-| `POC021` | done | Freeze and validate the statewide 2021 LRC Data Set 1 precinct geography as the fixed POC target. | `POC007`, `POC017` | A saved audit proves coverage of all 336,985 2020 Census parent blocks and all 9,178 precinct targets, records the 53 split parent blocks and corrected fragments, quantifies geometry precision exceptions, and emits no nearest-neighbor assignments. |
-| `POC022` | done | Register official State Senate plans by election cycle and build fixed-precinct-to-Senate fragment geography. | `POC017`, `POC021` | The official 1981, 1991, 2001, 2012 Revised Final, and 2021 Final plan inputs have frozen provenance; every 1990–2026 cycle selects the applicable plan; overlay weights pass coverage/conservation QA; fixed precincts crossing Senate boundaries retain split rows. |
+- `POC028`: `docs/DIRECT_LEGISLATIVE_CROSSWALK_PROOF.md`
+- `POC029`: `docs/POC029_STATUS.md` and
+  `artifacts/poc029/final_acceptance_qa.json`
+- `POC030`: `docs/POC030_ARCHIVE.md` and
+  `artifacts/poc030/archive_qa.json`
+- `POC031`: `docs/POC031_VAP_PROOF.md` and
+  `artifacts/poc031/qa_results.json`
+- `POC032`: `docs/DATA_EXPLORER.md` and
+  `artifacts/poc032/explorer_qa.json`
+- `POC033`: `docs/POC033_METRIC_INVENTORY.md` and
+  `artifacts/poc033/inventory_qa.json`
+- `POC034`: `docs/DATA_EXPLORER.md` and
+  `artifacts/poc034/explorer_qa.json`
+- `POC036`: `docs/POC036_STATUS.md` and
+  `artifacts/poc036/socioeconomic_trend_qa.json`
+- `POC039`: `docs/POC039_STATUS.md` and
+  `artifacts/poc039/model_export_qa_v2.json`
 
-## Population products and election allocation
+## POC completion boundary
 
-| ID | Status | Experiment | Depends on | Done when |
-|---|---|---|---|---|
-| `POC010` | done | Produce the statewide 2020 result on the fixed precinct target and 2021 Final Senate plan. | `POC021`, `POC022` | Crosswalk, precinct and Senate totals, and QA artifacts are repeatable; state and county totals conserve population. |
-| `POC011` | done | Add 2010 decennial total population as a reusable source product. | `POC010` | Official source and geometry are confirmed; direct and relationship-assisted routes are compared; the source can be allocated to the fixed precinct target and applicable Senate plan. |
-| `POC012` | ready | Add 2000 decennial total population as a reusable source product. | `POC011` | The source meets the same provenance, coverage, conservation, and method-comparison gates. |
-| `POC013` | deferred | Add 1990 decennial total population as a reusable source product. | `POC012` | Legacy STF 1 and geometry parsing are reproducible and limitations are reported. |
-| `POC014` | done | Inventory all usable mid-decade/ACS population products and release dates. | — | Each available product has an exact period, release date, geography, variable, MOE field, source, and checksum/API manifest; unavailable gaps remain explicit. |
-| `POC015` | ready | Implement and test the block-group mid-decade allocation method. | `POC007`, `POC014` | Estimate and MOE paths are explicit; simple and population-informed methods are compared against the fixed precinct target and applicable Senate plan. |
-| `POC019` | deferred | Map available population products to election cycles without hiding availability. | `POC011`–`POC015`, `POC017` | Every candidate election/product pairing records reference period, release date, election date, fixed target, Senate plan, and whether it was available by the selected cutoff. |
-| `POC016` | deferred | Run all accepted population/election pairings on the fixed target. | `POC010`–`POC015`, `POC017`, `POC021`, `POC022` | One manifest indexes every election, fixed precinct target, Senate plan, population input, crosswalk, result, QA report, method version, and known limitation. |
-
-## Immediate sequence
-
-`POC010`, `POC011`, `POC014`, `POC021`, and `POC022` are complete. Advance
-historical decennial inputs newest to oldest with `POC012`; `POC015` is also
-ready for the separate ACS block-group allocation proof.
-`POC008`, `POC009`, `POC018`, and `POC020` remain explicit later-fidelity tasks;
-their source research is useful but no longer blocks the fixed-geography POC.
+`POC039` is the final POC deliverable: a stable, wide CSV contract over all
+readily usable accepted metrics, with complete 1992–2026 district/election
+coverage. The unfinished demographic, household/housing, and Census-land-area
+proofs are deferred rather than filled with weak proxies. Later production
+work may resume them, and user-guided explorer or manual quality investigations
+remain outside the POC proof boundary.
