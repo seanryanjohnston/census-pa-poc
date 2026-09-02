@@ -199,7 +199,7 @@ PLAN_CONFIGS = {
 def run(root: Path) -> dict[str, object]:
     """Build and validate direct 2020 House and Senate crosswalk products."""
     root = root.resolve()
-    artifact_dir = root / "artifacts/poc028"
+    artifact_dir = root / "artifacts/work/poc028"
     processed_dir = root / "data/processed/direct_legislative"
 
     manifest = build_manifest(root)
@@ -308,7 +308,9 @@ def run(root: Path) -> dict[str, object]:
     write_json(artifact_dir / "qa_results.json", qa)
     (artifact_dir / "report.md").write_text(render_report(qa))
     if not qa["passed"]:
-        raise RuntimeError("POC028 QA failed; inspect artifacts/poc028/qa_results.json")
+        raise RuntimeError(
+            "POC028 QA failed; inspect artifacts/work/poc028/qa_results.json"
+        )
     return qa
 
 

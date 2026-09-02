@@ -99,12 +99,13 @@ UNCERTAINTY = (
     "Target 90% MOEs use weighted source MOE components combined by root-sum-"
     "square; source covariance and allocation-weight uncertainty are omitted."
 )
+ACS_SOURCE_MANIFEST_PATH = "mappings/source_manifests/acs5_raw_files_v1.json"
 
 
 def run(root: Path) -> dict[str, object]:
     """Execute and validate all 56 direct ACS partitions."""
     root = root.resolve()
-    artifact_dir = root / "artifacts/poc029"
+    artifact_dir = root / "artifacts/work/poc029"
     processed_dir = root / "data/processed/direct_legislative/poc029"
     crosswalk_dir = processed_dir / "acs_crosswalks"
     artifact_dir.mkdir(parents=True, exist_ok=True)
@@ -178,7 +179,7 @@ def run(root: Path) -> dict[str, object]:
     (artifact_dir / "acs_report.md").write_text(render_report(qa))
     if not qa["passed"]:
         raise RuntimeError(
-            "POC029 ACS stage failed; inspect artifacts/poc029/acs_qa.json"
+            "POC029 ACS stage failed; inspect artifacts/work/poc029/acs_qa.json"
         )
     return qa
 
@@ -873,12 +874,11 @@ def partition_checks(profile: dict[str, object]) -> list[dict[str, object]]:
 
 
 def build_acs_manifest(root: Path) -> dict[str, object]:
-    """Freeze accepted upstream evidence and reverify raw ACS source hashes."""
+    """Freeze canonical inputs and reverify raw ACS source hashes."""
     upstream_paths = [
-        "artifacts/poc011/input_manifest.json",
-        "artifacts/poc028/input_manifest.json",
-        "artifacts/poc029/plan_input_manifest.json",
-        "artifacts/poc029/decennial_input_manifest.json",
+        "mappings/source_manifests/decennial_2010_v1.json",
+        "mappings/source_manifests/direct_2020_v1.json",
+        "mappings/legislative_plans_v1.csv",
         "mappings/acs5_products.csv",
         PARTITION_MAPPING_PATH,
     ]
@@ -894,9 +894,7 @@ def build_acs_manifest(root: Path) -> dict[str, object]:
                 ).isoformat(),
             }
         )
-    accepted_manifest = json.loads(
-        (root / "artifacts/poc029/acs_input_manifest.json").read_text()
-    )
+    accepted_manifest = json.loads((root / ACS_SOURCE_MANIFEST_PATH).read_text())
     sources = []
     for source in accepted_manifest["verified_source_files"]:
         path = root / source["relative_path"]

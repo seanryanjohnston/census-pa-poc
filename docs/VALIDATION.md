@@ -15,16 +15,6 @@ Every accepted partition must pass:
 8. No nearest-boundary assignment is used.
 9. Crosswalk and result logical hashes are immutable and replay identically.
 
-`POC030` adds repository-level gates:
-
-- every moved precinct-era path is listed in the archive manifest;
-- shared legacy-named modules retained by the direct dependency graph are
-  listed with a reason;
-- active mappings contain no precinct target fields;
-- the explorer loads all 78 direct partitions and both chambers;
-- active tests, lint, marimo static checks, and an executed notebook render
-  pass after the archive moves.
-
 `POC031` adds metric-specific gates:
 
 - the selected field is exactly PL 94-171 P3 `P0030001`, universe Total

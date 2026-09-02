@@ -96,6 +96,6 @@ reported the versioned legislative artifact as `reused_identical`.
 | Derived employment and poverty rates | `775c33194e6bc97d0e0b89814c8cfd5774f2cd6cb145e68de84c0085efafef64` |
 | Endpoint change summary | `75384a321dee7aa3ca687d413c0e1e2541876049e8442305362cf3771a8e7287` |
 
-Canonical machine-readable evidence is in
-`artifacts/poc036/socioeconomic_trend_qa.json` and
-`artifacts/poc036/socioeconomic_input_manifest.json`.
+The exact definitions used by the accepted export are in
+`mappings/socioeconomic_metric_definitions_v1.csv`. The final v2 export QA is
+in `artifacts/poc039/model_export_qa_v2.json`.

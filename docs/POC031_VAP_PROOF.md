@@ -16,7 +16,7 @@ direct legislative contract:
 The Census Bureau's official [PL 94-171 dataset page](https://www.census.gov/data/datasets/2020/dec/2020-census-redistricting-summary-file-dataset.html)
 and [state summary-file technical documentation](https://www2.census.gov/programs-surveys/decennial/2020/technical-documentation/complete-tech-docs/summary-file/2020Census_PL94_171Redistricting_StatesTechDoc_English.pdf)
 define P3 and its universe. The checksum-frozen local Census and LRC inputs are
-recorded in `artifacts/poc031/input_manifest.json`.
+recorded in `mappings/source_manifests/direct_2020_v1.json`.
 
 ## Metric-specific support proof
 
@@ -54,7 +54,8 @@ All 30 partition checks pass. A second complete execution reports
 | VAP district results | `a7b1e87030a726d8248df40797c6b315ab025d2779e1199d3a5ddeecf0c0dfeb` |
 | Direct fragment comparison | `bd0f72318c90dbac3868e1d9e83a7bda50befb3257e57de5a347446e4e4533f8` |
 
-Machine-readable QA is in `artifacts/poc031/qa_results.json`.
+The current notebook's consolidated P1/P3 QA is in
+`artifacts/poc034/explorer_qa.json`.
 
 ## Uncertainty boundary
 

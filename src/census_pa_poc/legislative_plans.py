@@ -81,7 +81,7 @@ def run(root: Path) -> dict[str, object]:
         "hashes": {"normalized_plans": output_hash},
         "passed": all_pass(checks),
     }
-    artifact_dir = root / "artifacts/poc029"
+    artifact_dir = root / "artifacts/work/poc029"
     write_json(artifact_dir / "plan_input_manifest.json", manifest)
     write_json(artifact_dir / "plan_source_profiles.json", profiles)
     write_json(artifact_dir / "plan_source_qa.json", qa)

@@ -170,7 +170,7 @@ OVERLAY = {
 def run(root: Path) -> dict[str, object]:
     """Execute POC013 from frozen legacy inputs through two allocations."""
     root = root.resolve()
-    artifact_dir = root / "artifacts/poc013"
+    artifact_dir = root / "artifacts/work/poc013"
     processed_dir = root / "data/processed/statewide_1990"
     artifact_dir.mkdir(parents=True, exist_ok=True)
     processed_dir.mkdir(parents=True, exist_ok=True)
@@ -326,7 +326,9 @@ def run(root: Path) -> dict[str, object]:
     write_json(artifact_dir / "qa_results.json", qa)
     (artifact_dir / "report.md").write_text(render_report(qa))
     if not qa["passed"]:
-        raise RuntimeError("POC013 QA failed; inspect artifacts/poc013/qa_results.json")
+        raise RuntimeError(
+            "POC013 QA failed; inspect artifacts/work/poc013/qa_results.json"
+        )
     return qa
 
 

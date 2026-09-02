@@ -30,10 +30,11 @@ REQUIRED_PARTITION_FIELDS = {
 def run(root: Path) -> dict[str, object]:
     """Combine the accepted plan, decennial, and ACS stage evidence."""
     root = root.resolve()
+    stage_dir = root / "artifacts/work/poc029"
     artifact_dir = root / "artifacts/poc029"
-    plan = read_json(artifact_dir / "plan_source_qa.json")
-    decennial = read_json(artifact_dir / "decennial_qa.json")
-    acs = read_json(artifact_dir / "acs_qa.json")
+    plan = read_json(stage_dir / "plan_source_qa.json")
+    decennial = read_json(stage_dir / "decennial_qa.json")
+    acs = read_json(stage_dir / "acs_qa.json")
     profiles = decennial["profiles"] + acs["profiles"]
     keys = {
         (
@@ -128,7 +129,6 @@ def run(root: Path) -> dict[str, object]:
         "passed": all_pass(checks),
     }
     write_json(artifact_dir / "final_acceptance_qa.json", qa)
-    (artifact_dir / "final_acceptance_report.md").write_text(render_report(qa))
     if not qa["passed"]:
         raise RuntimeError(
             "POC029 final acceptance failed; inspect final_acceptance_qa.json"
@@ -173,26 +173,6 @@ def read_json(path: Path) -> dict[str, object]:
 
 def check(check_id: str, passed: bool, observed: object) -> dict[str, object]:
     return {"check_id": check_id, "passed": bool(passed), "observed": observed}
-
-
-def render_report(qa: dict[str, object]) -> str:
-    return f"""# POC029 final direct legislative acceptance
-
-Status: **{"PASS" if qa["passed"] else "FAIL"}**
-
-- Official legislative plans: {qa["plan_count"]}
-- Population products: {qa["product_count"]}
-- Direct product/plan/chamber partitions: {qa["partition_count"]}
-  - decennial: {qa["decennial_partition_count"]}
-  - ACS: {qa["acs_partition_count"]}
-- Chambers: House and Senate
-- Plan vintages: {", ".join(qa["plan_vintages"])}
-
-Every partition declares source grain, target plan and applicability,
-weighting universe, fallback policy, uncertainty, QA, and immutable hashes.
-No partition contains or consumes precinct identity, and no nearest-boundary
-assignment is used.
-"""
 
 
 def main() -> None:

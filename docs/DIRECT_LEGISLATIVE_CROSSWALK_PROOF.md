@@ -32,10 +32,10 @@ published assignment.
 | 2021 Final Senate SHAPE | 2022–2026 elections | `4dcfd5f111ddf7de58484585205ecc5b01631e4a1b20c0745889f741ec137e14` |
 | 2021 Final Senate block equivalency | 2022–2026 elections | `ff7a79d2da3df2094bebe9ab0f19d91bc2bfec8537f8d07a034b6b0d1b3dfbef` |
 
-The machine-readable manifest at `artifacts/poc028/input_manifest.json` also
+The canonical manifest at `mappings/source_manifests/direct_2020_v1.json` also
 preserves producer, exact product, URL, retrieval timestamp, schema, CRS,
-license note, and geographic/population universe. Raw inputs and generated
-artifacts remain ignored pending a publication and redistribution decision.
+license note, and geographic/population universe. Raw inputs remain ignored
+pending a publication and redistribution decision.
 
 ## Statewide evidence
 
@@ -74,7 +74,7 @@ This result proves only standard 2020 Census total population on the 2021 Final
 House and Senate plans. It does not prove that published fragment population is
 a valid support surface for another metric. `POC029` separately versioned and
 validated the historical decennial and ACS combinations without a precinct
-dependency, and `POC030` archived the superseded precinct route.
+dependency. The superseded precinct route is recoverable from Git history.
 
 ## Reproduce
 

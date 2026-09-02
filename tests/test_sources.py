@@ -7,7 +7,6 @@ from census_pa_poc.sources import (
     load_acs5_published_population_totals,
     load_pl94_block_population,
     load_pl94_block_population_statewide,
-    load_pl94_block_race_ethnicity_statewide,
     load_pl94_block_vap_statewide,
 )
 
@@ -92,45 +91,6 @@ def test_load_pl94_block_vap_uses_p3_in_file02(tmp_path) -> None:
     assert result.to_dict("records") == [
         {"source_block_geoid": "420410001001001", "P0030001": 13},
         {"source_block_geoid": "420430001001001", "P0030001": 19},
-    ]
-
-
-def test_load_pl94_block_race_ethnicity_uses_additive_p2_cells(tmp_path) -> None:
-    archive = tmp_path / "fixture.zip"
-    geography = _row(
-        97,
-        {2: "750", 7: "0000001", 9: "420410001001001", 12: "42"},
-    )
-    file01 = _row(
-        87,
-        {
-            4: "0000001",
-            77: "3",
-            80: "5",
-            81: "7",
-            82: "11",
-            83: "13",
-            84: "17",
-            85: "19",
-            86: "23",
-        },
-    )
-    with ZipFile(archive, "w") as zf:
-        zf.writestr("pageo2020.pl", geography)
-        zf.writestr("pa000012020.pl", file01)
-
-    result = load_pl94_block_race_ethnicity_statewide(archive)
-
-    assert result.to_dict("records") == [
-        {
-            "source_block_geoid": "420410001001001",
-            "hispanic": 3,
-            "nh_white": 5,
-            "nh_black": 7,
-            "nh_aian": 11,
-            "nh_asian_pacific": 30,
-            "nh_other_multiracial": 42,
-        }
     ]
 
 

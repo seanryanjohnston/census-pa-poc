@@ -1008,7 +1008,7 @@ def run(root: Path) -> dict[str, object]:
                 DECENNIAL_SOCIOECONOMIC_PATH,
                 "mappings/acs5_products.csv",
                 "mappings/population_periods.csv",
-                "mappings/additive_metric_definitions_v1.csv",
+                "mappings/socioeconomic_metric_definitions_v1.csv",
             ]
         },
         "support_hashes": support_hashes,

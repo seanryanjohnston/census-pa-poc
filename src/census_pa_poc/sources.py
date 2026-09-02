@@ -136,52 +136,6 @@ def load_pl94_block_vap_statewide(archive: Path) -> pd.DataFrame:
     )
 
 
-def load_pl94_block_race_ethnicity_statewide(archive: Path) -> pd.DataFrame:
-    """Read the additive 2020 PL P2 race/ethnicity bridge cells.
-
-    File 01 contains 71 P1 cells before P2. The selected P2 cells are the
-    directly published Hispanic total and mutually exclusive non-Hispanic
-    categories used by ``POC033``. Parent and descendant cells are never mixed.
-    """
-    positions = {
-        "hispanic": 77,
-        "nh_white": 80,
-        "nh_black": 81,
-        "nh_aian": 82,
-        "nh_asian": 83,
-        "nh_nhpi": 84,
-        "nh_other": 85,
-        "nh_multiracial": 86,
-    }
-    with ZipFile(archive) as zf:
-        geography = {
-            row[7]: row[9]
-            for row in _pipe_rows(zf, "pageo2020.pl")
-            if row[2] == "750" and row[12] == "42"
-        }
-        values = {
-            row[4]: {name: int(row[position]) for name, position in positions.items()}
-            for row in _pipe_rows(zf, "pa000012020.pl")
-            if row[4] in geography
-        }
-
-    rows = []
-    for logrecno, geocode in geography.items():
-        row = values[logrecno]
-        rows.append(
-            {
-                "source_block_geoid": geocode,
-                "hispanic": row["hispanic"],
-                "nh_white": row["nh_white"],
-                "nh_black": row["nh_black"],
-                "nh_aian": row["nh_aian"],
-                "nh_asian_pacific": row["nh_asian"] + row["nh_nhpi"],
-                "nh_other_multiracial": row["nh_other"] + row["nh_multiracial"],
-            }
-        )
-    return pd.DataFrame(rows).sort_values("source_block_geoid").reset_index(drop=True)
-
-
 def load_2010_pl94_block_population(archive: Path) -> pd.DataFrame:
     """Read Pennsylvania 2010 PL 94-171 block total population.
 

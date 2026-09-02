@@ -62,5 +62,7 @@ Run:
 The command validates 19 inventory and metadata gates across 32 frozen public
 metadata files. The inventory logical SHA-256 is
 `6c369aad01b2ecf58a81fb3ff4824c169a4ce53c070b692d956a8afa864c9525`.
-Machine-readable evidence is under `artifacts/poc014/`; downloaded metadata is
+Canonical product metadata is in `mappings/acs5_products.csv`, and the exact
+raw-file provenance used by replay is in
+`mappings/source_manifests/acs5_raw_files_v1.json`. Downloaded metadata is
 ignored under `data/raw/acs5_api_metadata/`.

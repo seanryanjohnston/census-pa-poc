@@ -1,0 +1,125 @@
+{
+  "manifest_version": "1.0.0",
+  "sources": [
+    {
+      "crs": null,
+      "effective_vintage": "2000-04-01",
+      "geographic_universe": "Census 2000 tabulation blocks in Pennsylvania",
+      "license_access": "Public federal data; cite U.S. Census Bureau",
+      "population_universe": null,
+      "producer": "U.S. Census Bureau",
+      "product": "Census 2000 PL 94-171 Pennsylvania geography header",
+      "reference_vintage": "2000-04-01",
+      "relative_path": "data/raw/census_2000_pa_pl/pageo.upl.zip",
+      "release_date": "2001-03-09",
+      "retrieval_timestamp": "2026-08-29T16:57:50.815366+00:00",
+      "schema": {
+        "block_summary_level": "750",
+        "format": "fixed-width state geography header",
+        "join": "LOGRECNO",
+        "member": "pageo.upl"
+      },
+      "sha256": "34d4079451e3d3e1396b76287d54d0a96814de8d46059a327547b74c8ea3f672",
+      "size_bytes": 11279236,
+      "source_id": "census_2000_pa_pl_geography",
+      "url": "https://www2.census.gov/census_2000/datasets/redistricting_file--pl_94-171/Pennsylvania/pageo.upl.zip"
+    },
+    {
+      "crs": null,
+      "effective_vintage": "2000-04-01",
+      "geographic_universe": "Census 2000 tabulation geography in Pennsylvania",
+      "license_access": "Public federal data; cite U.S. Census Bureau",
+      "population_universe": "Standard total population",
+      "producer": "U.S. Census Bureau",
+      "product": "Census 2000 PL 94-171 Pennsylvania File 01",
+      "reference_vintage": "2000-04-01",
+      "relative_path": "data/raw/census_2000_pa_pl/pa00001.upl.zip",
+      "release_date": "2001-03-09",
+      "retrieval_timestamp": "2026-08-29T16:57:51.232830+00:00",
+      "schema": {
+        "format": "comma-delimited state summary file",
+        "join": "LOGRECNO (field 5)",
+        "member": "pa00001.upl",
+        "metric": "P0010001 / PL001001 total population (field 6)"
+      },
+      "sha256": "888e21ecac795732564c7cd1fa3122cac58f22a006ade8f907d437cbe7a6fe0f",
+      "size_bytes": 5366009,
+      "source_id": "census_2000_pa_pl_file01",
+      "url": "https://www2.census.gov/census_2000/datasets/redistricting_file--pl_94-171/Pennsylvania/pa00001.upl.zip"
+    },
+    {
+      "crs": "EPSG:4269",
+      "effective_vintage": "Census 2000 tabulation geography",
+      "geographic_universe": "Census 2000 tabulation blocks in Pennsylvania",
+      "license_access": "Public federal data; acknowledge U.S. Census Bureau",
+      "population_universe": null,
+      "producer": "U.S. Census Bureau",
+      "product": "2010 TIGER/Line Census 2000 Pennsylvania tabulation blocks",
+      "reference_vintage": "2000",
+      "relative_path": "data/raw/census_2000_pa_blocks/tl_2010_42_tabblock00.zip",
+      "release_date": "2011-01-13 archive timestamp",
+      "retrieval_timestamp": "2026-08-29T16:57:50.636847+00:00",
+      "schema": {
+        "area_fields": [
+          "ALAND00",
+          "AWATER00"
+        ],
+        "format": "ESRI Shapefile",
+        "id": "BLKIDFP00",
+        "layer": "tl_2010_42_tabblock00.shp"
+      },
+      "sha256": "a5771874f846018ddf7d3761939a8e9cd3ecdf8d34364caa53e84630707c85dc",
+      "size_bytes": 208037115,
+      "source_id": "census_2000_pa_blocks",
+      "url": "https://www2.census.gov/geo/tiger/TIGER2010/TABBLOCK/2000/tl_2010_42_tabblock00.zip"
+    },
+    {
+      "crs": null,
+      "effective_vintage": "comparability support product",
+      "geographic_universe": "Census 2000 Pennsylvania blocks related to 2010 tabulation blocks",
+      "license_access": "Public federal data; acknowledge U.S. Census Bureau",
+      "population_universe": null,
+      "producer": "U.S. Census Bureau",
+      "product": "Census 2000 to 2010 tabulation block relationship file",
+      "reference_vintage": "2000/2010",
+      "relative_path": "data/raw/census_2000_2010_block_relationship_pa/TAB2000_TAB2010_ST_42_v2.zip",
+      "release_date": "2011-02-25 member timestamp",
+      "retrieval_timestamp": "2026-08-29T16:57:49.256380+00:00",
+      "schema": {
+        "format": "comma-delimited fixed-width-padded text in ZIP",
+        "member": "TAB2000_TAB2010_ST_42_v2.txt",
+        "population_fields": [],
+        "weight_fields": [
+          "AREALAND_INT",
+          "AREAWATER_INT"
+        ]
+      },
+      "sha256": "ab32c86a78d72e39d791167b8eec6f960934cd13c0878833641d0c36e4be5fa7",
+      "size_bytes": 7040655,
+      "source_id": "census_2000_2010_block_relationship_pa",
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/rel/t00t10/TAB2000_TAB2010_ST_42_v2.zip"
+    },
+    {
+      "crs": "EPSG:4269",
+      "effective_vintage": "2010 Census tabulation geography",
+      "geographic_universe": "2010 Census tabulation blocks in Pennsylvania",
+      "license_access": "Public federal data; acknowledge U.S. Census Bureau",
+      "population_universe": null,
+      "producer": "U.S. Census Bureau",
+      "product": "2010 TIGER/Line Pennsylvania tabulation blocks",
+      "reference_vintage": "2010",
+      "relative_path": "data/raw/census_2010_pa_blocks/tl_2010_42_tabblock10.zip",
+      "release_date": "2012-03-26 archive publication",
+      "retrieval_timestamp": "2026-08-29T16:11:12.067814+00:00",
+      "schema": {
+        "format": "ESRI Shapefile",
+        "id": "GEOID10",
+        "layer": "tl_2010_42_tabblock10.shp"
+      },
+      "sha256": "fc33d93eb53e71b0d61c3aa35d496a8a8b8d192933d68ebef206ccbaa9e19152",
+      "size_bytes": 251807842,
+      "source_id": "census_2010_pa_blocks",
+      "url": "https://www2.census.gov/geo/tiger/TIGER2010/TABBLOCK/2010/tl_2010_42_tabblock10.zip"
+    }
+  ]
+}

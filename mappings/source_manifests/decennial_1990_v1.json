@@ -1,0 +1,909 @@
+{
+  "manifest_version": "1.0.0",
+  "sources": [
+    {
+      "bytes": 9188191,
+      "crs": null,
+      "effective_vintage": "1990-04-01",
+      "geographic_universe": "1990 Census tabulation blocks in Pennsylvania",
+      "license_access": "Public federal data; cite U.S. Census Bureau",
+      "population_universe": "Standard total population, POP100",
+      "producer": "U.S. Census Bureau",
+      "product": "1990 Census STF 1B Pennsylvania geographic headers",
+      "reference_vintage": "1990-04-01",
+      "relative_path": "data/raw/census_1990_pa_stf1b/STF1B-PAh.zip",
+      "release_date": "1991; exact Pennsylvania release date not established",
+      "retrieved_at": "2026-08-29T21:39:31.499724+00:00",
+      "schema": {
+        "block_summary_level": "100",
+        "format": "300-character fixed-width geographic-header records",
+        "member": "STF1BHPA.F01",
+        "metric": "POP100 positions 291-299"
+      },
+      "sha256": "9821d1a7d10d2065661d7174695e10d5b3624651c2b7dbcf8b8ab3d4accfd6d4",
+      "source_id": "census_1990_pa_stf1b_header",
+      "url": "https://www2.census.gov/census_1990/STF1B_ASCII/STF1B-PAh.zip"
+    },
+    {
+      "bytes": 123540225,
+      "collection_sha256": "559b219b8700c4b95d84fd64531463b798ec4d43945190ca44b3128b77ce2666",
+      "crs": "EPSG:4269 (NAD83; coordinates have six implied decimals)",
+      "effective_vintage": "Census 2000 topology carrying 1990 block codes",
+      "file_count": 67,
+      "files": [
+        {
+          "bytes": 1318119,
+          "filename": "tgr42001.zip",
+          "sha256": "2490a0841930c07afbc9f0a55c9ecdd6219e9bfc38f53e242fda86e0d56225a5",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42001.zip"
+        },
+        {
+          "bytes": 6945846,
+          "filename": "tgr42003.zip",
+          "sha256": "3d76e345ec9995a00156b2a7d3b37f5e76166bbeab01d2e96126deee5ed65a00",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42003.zip"
+        },
+        {
+          "bytes": 1710840,
+          "filename": "tgr42005.zip",
+          "sha256": "7eb1e2f7c8f822321d6cef6be0a10cbec8bb817c2688e0d79b2227e348afeda2",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42005.zip"
+        },
+        {
+          "bytes": 1954298,
+          "filename": "tgr42007.zip",
+          "sha256": "42a87ccd1eb82c837e49d4ff26d64c6c95168678b5598e6458572d04b4ab0642",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42007.zip"
+        },
+        {
+          "bytes": 1701102,
+          "filename": "tgr42009.zip",
+          "sha256": "6e6992fdfbf569a3617523f77220a264ff9151f87830f43982eb36664b7317d5",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42009.zip"
+        },
+        {
+          "bytes": 3721211,
+          "filename": "tgr42011.zip",
+          "sha256": "0e1221460b6aedf4df5ccb41a5d34df994804d93b9e5ed4d3cba0186404ef503",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42011.zip"
+        },
+        {
+          "bytes": 1605206,
+          "filename": "tgr42013.zip",
+          "sha256": "1c5aab0960c5106b643c3705065707e47a765a3236430e4916832aea046fecee",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42013.zip"
+        },
+        {
+          "bytes": 1601760,
+          "filename": "tgr42015.zip",
+          "sha256": "2848655639ddd086261060ff5e98e3a413a7b40e6c9e9f6098bbabfb977f8fff",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42015.zip"
+        },
+        {
+          "bytes": 3528845,
+          "filename": "tgr42017.zip",
+          "sha256": "5f3fd22fe18d4effd9b991a9b18fec31f2a02d07d3aca79f3cc93bab70be8474",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42017.zip"
+        },
+        {
+          "bytes": 2465966,
+          "filename": "tgr42019.zip",
+          "sha256": "8e1f0240c35ce029a144cb7143721b5b2f2740493a12393ce2af88bc3c571f0f",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42019.zip"
+        },
+        {
+          "bytes": 2146713,
+          "filename": "tgr42021.zip",
+          "sha256": "22556f9bb7be9d7ef9fe474192957ff0eb7eeb189de70c4ae0f31316c071fc56",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42021.zip"
+        },
+        {
+          "bytes": 351034,
+          "filename": "tgr42023.zip",
+          "sha256": "e88d04c48d7d75290a4345033f0785877989669f5baa6111b452278caec3b411",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42023.zip"
+        },
+        {
+          "bytes": 1059640,
+          "filename": "tgr42025.zip",
+          "sha256": "57b5f1e3e1c2371f61da7efe7a2f71cb1b9f7aa454bd83d745185825553de142",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42025.zip"
+        },
+        {
+          "bytes": 1850240,
+          "filename": "tgr42027.zip",
+          "sha256": "5abc5fed893a8e454068fbf84c5153ba254cae69b7728b83cd68da7f968021f4",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42027.zip"
+        },
+        {
+          "bytes": 3375664,
+          "filename": "tgr42029.zip",
+          "sha256": "d19c520aee944b6c8a69a4905e84f11a832bb48f6261ccc33f43050ae6429afe",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42029.zip"
+        },
+        {
+          "bytes": 1202297,
+          "filename": "tgr42031.zip",
+          "sha256": "39707902edc3a8ed5795707d1fab3592183a64451661b7b5a35420d04d15f4c5",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42031.zip"
+        },
+        {
+          "bytes": 2332687,
+          "filename": "tgr42033.zip",
+          "sha256": "dd00733edd797899637e8e4a804250d3895954ce01957c06457d8a01a8157ac1",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42033.zip"
+        },
+        {
+          "bytes": 1079681,
+          "filename": "tgr42035.zip",
+          "sha256": "81b6e030d71bba6c62b17be0097e4e43c232ddf210a0b45f8e558f1a867e3a7e",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42035.zip"
+        },
+        {
+          "bytes": 1240345,
+          "filename": "tgr42037.zip",
+          "sha256": "60a97e9eab0044393bebeeee1bd8908ca36b4ccd8b6eccbfb4cf428df66785d9",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42037.zip"
+        },
+        {
+          "bytes": 1963151,
+          "filename": "tgr42039.zip",
+          "sha256": "3364e581a312f49d9c903e562bf2069a812e1fa14acb31e8c95fe18625a8c653",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42039.zip"
+        },
+        {
+          "bytes": 1678486,
+          "filename": "tgr42041.zip",
+          "sha256": "400ed41748a87f9dd2328a6bb9e21271cd06e26319166b95349e7792ca8f1274",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42041.zip"
+        },
+        {
+          "bytes": 2056572,
+          "filename": "tgr42043.zip",
+          "sha256": "7a38f7b9052265495e617094e36d7b3c43220dd5343e43d469b0dbd0e25f7b4a",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42043.zip"
+        },
+        {
+          "bytes": 1988561,
+          "filename": "tgr42045.zip",
+          "sha256": "babe72276e9feef04441e76c155b084600a8c53ccd19eccd5e1b06c9be8ea17b",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42045.zip"
+        },
+        {
+          "bytes": 961702,
+          "filename": "tgr42047.zip",
+          "sha256": "b96078e953865988ca6af946d171143fb3aafce3c0108333037a927bbcbb8f0b",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42047.zip"
+        },
+        {
+          "bytes": 1913030,
+          "filename": "tgr42049.zip",
+          "sha256": "0a782b7ce7587d805ef32766f24ba7413649da9b47bd28ab39fd6ac58c12689e",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42049.zip"
+        },
+        {
+          "bytes": 2555257,
+          "filename": "tgr42051.zip",
+          "sha256": "a511455e0c7a9c9a652ffd29c830bb888ec0fd23296645c134c68dbfa17a94bb",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42051.zip"
+        },
+        {
+          "bytes": 467485,
+          "filename": "tgr42053.zip",
+          "sha256": "7bc430d3ce0e5baeb21a00c21a6cee05b448ef1c72076a1aed2de213ace0a585",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42053.zip"
+        },
+        {
+          "bytes": 1725085,
+          "filename": "tgr42055.zip",
+          "sha256": "3807b7882809651935071129b6cc02209c979fd83cf1994290f617d09cfc6b07",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42055.zip"
+        },
+        {
+          "bytes": 555448,
+          "filename": "tgr42057.zip",
+          "sha256": "8e46968ecf1e15acba73ecd7f0efe9bae6618484642f0665ae28689c72cb00a1",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42057.zip"
+        },
+        {
+          "bytes": 1053070,
+          "filename": "tgr42059.zip",
+          "sha256": "1cad73b8dac5605f06dc98acf4cd2209ff61f9b10d07e0c45fa762cad6176873",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42059.zip"
+        },
+        {
+          "bytes": 1469631,
+          "filename": "tgr42061.zip",
+          "sha256": "d608a4b83f662376018a6bb0f3efc751ff2d42a97b2939df4e3d494e7a85e69c",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42061.zip"
+        },
+        {
+          "bytes": 2047710,
+          "filename": "tgr42063.zip",
+          "sha256": "2bcd5eb34c31de3595fdcc14456a517c462a8e02fe578cc2256cf1fd6a51e137",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42063.zip"
+        },
+        {
+          "bytes": 1261761,
+          "filename": "tgr42065.zip",
+          "sha256": "a21fc3ee77fbf4856e935236921ba2b624c15cc35113af4d09e1bced819e5ac2",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42065.zip"
+        },
+        {
+          "bytes": 640201,
+          "filename": "tgr42067.zip",
+          "sha256": "b30533e387f94534b00b52f5618dec1edad10ff04fb73ade46381eb12a7fad33",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42067.zip"
+        },
+        {
+          "bytes": 1866530,
+          "filename": "tgr42069.zip",
+          "sha256": "7fde4a7d739961ac068e1658d38bb5f626a878c3d6823ebbd59b0320376dab2d",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42069.zip"
+        },
+        {
+          "bytes": 3371798,
+          "filename": "tgr42071.zip",
+          "sha256": "ebba817ab7d97fcda58c78e6be30d95ac9dec4daebcae3324e8d81a7d5ac5f78",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42071.zip"
+        },
+        {
+          "bytes": 1365296,
+          "filename": "tgr42073.zip",
+          "sha256": "1515345fd63e8b55f934263c71cd0cfc96e3416f69f40d72f6192340f51861d2",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42073.zip"
+        },
+        {
+          "bytes": 1449478,
+          "filename": "tgr42075.zip",
+          "sha256": "3e3d5a393e7b0ff8ac48b5a9b47ee8c958485816ad9ee161109dbc82e731107b",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42075.zip"
+        },
+        {
+          "bytes": 2390642,
+          "filename": "tgr42077.zip",
+          "sha256": "191492ee5601f1602f0683ab7a4ebb46f23e22dc50d84255fb469b412990af3d",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42077.zip"
+        },
+        {
+          "bytes": 2907740,
+          "filename": "tgr42079.zip",
+          "sha256": "50fd25a1132d2d9b79bcea3338e4cd19cb54aaddb031e36b6a67626f961a9b98",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42079.zip"
+        },
+        {
+          "bytes": 2045317,
+          "filename": "tgr42081.zip",
+          "sha256": "8aa054d8ea9e1d3d5758649c190dd340e3d07c9096d30b3529d2ae9a7cbfe928",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42081.zip"
+        },
+        {
+          "bytes": 1231445,
+          "filename": "tgr42083.zip",
+          "sha256": "a78d003e2a30910852260300a1108b86ba6c8fe9b64b1969a1f8e8b6450f4846",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42083.zip"
+        },
+        {
+          "bytes": 1718361,
+          "filename": "tgr42085.zip",
+          "sha256": "378cf4e83bbff3af86149031ae99c1455b3622a2f9d4c208fd94fe7307e0c6ea",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42085.zip"
+        },
+        {
+          "bytes": 820226,
+          "filename": "tgr42087.zip",
+          "sha256": "00144d95f8b2f18c074f56dc12086fdfa5725ab4c03c278119b3b61e3b23e6f1",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42087.zip"
+        },
+        {
+          "bytes": 2316832,
+          "filename": "tgr42089.zip",
+          "sha256": "5ad13ee1a4cd59da5c3cf68285af2fa5138f920b1b7759c7d6227a03f2699e5a",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42089.zip"
+        },
+        {
+          "bytes": 3537412,
+          "filename": "tgr42091.zip",
+          "sha256": "041b0e428d95bbd1605ef80f7baba2bdf45c099ab986c300ea5b7f0742b45566",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42091.zip"
+        },
+        {
+          "bytes": 357577,
+          "filename": "tgr42093.zip",
+          "sha256": "aca9a4c98ef11a5155238b8dd1e1b55df7d812d6a8265b9949c0ca3e989c7e7e",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42093.zip"
+        },
+        {
+          "bytes": 2103637,
+          "filename": "tgr42095.zip",
+          "sha256": "aa1579884201ae7ec408d2dd87a57ba892b2c86eea9a7922f8e81515e15b2799",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42095.zip"
+        },
+        {
+          "bytes": 1477554,
+          "filename": "tgr42097.zip",
+          "sha256": "dd53517f8dfd0120a1f27ac97af5659c78c2f3ecfbc86e2c53be43189e357c55",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42097.zip"
+        },
+        {
+          "bytes": 1047669,
+          "filename": "tgr42099.zip",
+          "sha256": "da94d49901c2a33bbffec0336bc56e3511edeb078ebe2e4d074b650fdbf3ab2d",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42099.zip"
+        },
+        {
+          "bytes": 2929783,
+          "filename": "tgr42101.zip",
+          "sha256": "9f083b5fed68c194e6895b7403592a8531b78b62f58128dbdca37a0306354d00",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42101.zip"
+        },
+        {
+          "bytes": 1386570,
+          "filename": "tgr42103.zip",
+          "sha256": "6d125b526aaaa89c640a7e7138d1fa1cdbcd6fe7f7c8ac2ac26d2cb5bf2f4db9",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42103.zip"
+        },
+        {
+          "bytes": 1053470,
+          "filename": "tgr42105.zip",
+          "sha256": "9cfe7522b554a4846a2076286ea81230a9c67d2ea2f91a4e97a8e38efaa22252",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42105.zip"
+        },
+        {
+          "bytes": 2319550,
+          "filename": "tgr42107.zip",
+          "sha256": "cd642c26136553117e215c9459e22498db85ebc67b3af5eb9fe2151a3c76b063",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42107.zip"
+        },
+        {
+          "bytes": 801788,
+          "filename": "tgr42109.zip",
+          "sha256": "dcedaa55eca03d0baf4a15e60b914811c90aeb75e91d394e39218c48b1cc8cc4",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42109.zip"
+        },
+        {
+          "bytes": 2180175,
+          "filename": "tgr42111.zip",
+          "sha256": "82e1c4fdc8c8d9ee83168fda87a8881c4149f636bf215b52ac042f7d6bc33999",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42111.zip"
+        },
+        {
+          "bytes": 519379,
+          "filename": "tgr42113.zip",
+          "sha256": "8c46c247b2406bfa40095c0ef9233153e66c133221951542784d8e28eef723f1",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42113.zip"
+        },
+        {
+          "bytes": 1346054,
+          "filename": "tgr42115.zip",
+          "sha256": "a3a691a071ae27ecb899896c59e87291b1c48966cd6bddf977f3457fd5e73c53",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42115.zip"
+        },
+        {
+          "bytes": 1419939,
+          "filename": "tgr42117.zip",
+          "sha256": "4d4520f7580a1556c756b07335210fafc5fbf50cb2d09cb7ebf908a3c2d7a62e",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42117.zip"
+        },
+        {
+          "bytes": 641228,
+          "filename": "tgr42119.zip",
+          "sha256": "b66ade76de09f19ec70fd4209290f75978cac0fb9887e3246a980937ea65dfb3",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42119.zip"
+        },
+        {
+          "bytes": 1166764,
+          "filename": "tgr42121.zip",
+          "sha256": "23c610a6f32418ef6d4f535d1ed69cddf2f753cc7a747d22b140c0117ca621b0",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42121.zip"
+        },
+        {
+          "bytes": 1094691,
+          "filename": "tgr42123.zip",
+          "sha256": "9769f44798a2fa9646ad9926b35e396de931bacc59ec1d8278bd46292629d5de",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42123.zip"
+        },
+        {
+          "bytes": 2973450,
+          "filename": "tgr42125.zip",
+          "sha256": "040f5654d7169f19abb03894eb59e13d5251a7b656a0fb49e89f01aa24556103",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42125.zip"
+        },
+        {
+          "bytes": 1556510,
+          "filename": "tgr42127.zip",
+          "sha256": "9a6508c7f74a66bafbaa5c52ad2b02c6a10b3061998e0271a235367ac4205edc",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42127.zip"
+        },
+        {
+          "bytes": 4239977,
+          "filename": "tgr42129.zip",
+          "sha256": "452fde57cd6d9bd1a0df825454d9075363a72a7a5730600819f47e70dfb469e2",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42129.zip"
+        },
+        {
+          "bytes": 723463,
+          "filename": "tgr42131.zip",
+          "sha256": "23b09581b16b8fb3a675b0f1112aea2f7fe57975387c1b8831aeef0220374c0f",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42131.zip"
+        },
+        {
+          "bytes": 3651276,
+          "filename": "tgr42133.zip",
+          "sha256": "1405851e40599de69ead38e52b26a68ea6056f9c96cd607ccdf54018884c37eb",
+          "url": "https://www2.census.gov/geo/tiger/tiger2k/pa/tgr42133.zip"
+        }
+      ],
+      "geographic_universe": "Pennsylvania TIGER GT-polygons and block codes",
+      "license_access": "Public federal data; acknowledge U.S. Census Bureau",
+      "population_universe": null,
+      "producer": "U.S. Census Bureau",
+      "product": "Census 2000 TIGER/Line Pennsylvania county files",
+      "reference_vintage": "1990/2000",
+      "relative_path": "data/raw/census_2000_tiger_pa",
+      "release_date": "2001-06 county-member timestamps",
+      "retrieved_at": "2026-08-29T21:39:31.499724+00:00",
+      "schema": {
+        "1990_block_record": "RTA",
+        "2000_block_record": "RTS",
+        "format": "67 county ZIP archives of fixed-width TIGER/Line records",
+        "geometry_records": [
+          "RT1",
+          "RT2",
+          "RTI",
+          "RTP"
+        ]
+      },
+      "source_id": "census_2000_tiger_pa_with_1990_codes",
+      "url_template": "https://www2.census.gov/geo/tiger/tiger2k/pa/{filename}"
+    },
+    {
+      "bytes": 15646288,
+      "collection_sha256": "2844c2604b2676068e858a0b234aa74f94ce25a3b7d3fab04715a7170676328f",
+      "crs": null,
+      "effective_vintage": "comparability support product",
+      "file_count": 67,
+      "files": [
+        {
+          "bytes": 166952,
+          "filename": "t9t242001.txt",
+          "sha256": "628f3050aad76c9f0d2f3cac40b2fd14b4549c1d5a0fbc5c8323319af62e2668",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242001.txt"
+        },
+        {
+          "bytes": 1094601,
+          "filename": "t9t242003.txt",
+          "sha256": "933da3089f1bdf9fe121ac043828ba14f5eef894a14c799505fcb06984e374e3",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242003.txt"
+        },
+        {
+          "bytes": 182342,
+          "filename": "t9t242005.txt",
+          "sha256": "897240be92e7e9a046e293e99065237d3211aa38083c0a1a44da4618356cd62f",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242005.txt"
+        },
+        {
+          "bytes": 253230,
+          "filename": "t9t242007.txt",
+          "sha256": "a3f2c89c8c0e0c1e371eb0f37374f6cf17207195a61428a58b8736f92c0ef1e7",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242007.txt"
+        },
+        {
+          "bytes": 146177,
+          "filename": "t9t242009.txt",
+          "sha256": "85683a6ca8fb4124bdd8b64349edc838f6855e605f0a34b896f0d3b8590fe4d3",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242009.txt"
+        },
+        {
+          "bytes": 459129,
+          "filename": "t9t242011.txt",
+          "sha256": "8306f98fc1f1d2566318190dad995dbcb73b5605093a70c4e5901c5f96f636cb",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242011.txt"
+        },
+        {
+          "bytes": 204508,
+          "filename": "t9t242013.txt",
+          "sha256": "b3ff1d28d903762d8c96e8a1c18038363db506907fdbfee24bb1bef80319a7cf",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242013.txt"
+        },
+        {
+          "bytes": 178225,
+          "filename": "t9t242015.txt",
+          "sha256": "dbd97d18ca9a7302a68e8c91b61bad805de785555acc7c93765a03c41afe50f4",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242015.txt"
+        },
+        {
+          "bytes": 436637,
+          "filename": "t9t242017.txt",
+          "sha256": "574718c2209d6823a5c83e27a72c2dd779c30d59e576924d683bded65ee26330",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242017.txt"
+        },
+        {
+          "bytes": 277072,
+          "filename": "t9t242019.txt",
+          "sha256": "046656415dda83e9a9b914f829a191eaf8ee34d32c4f940451e60052edd8ecf9",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242019.txt"
+        },
+        {
+          "bytes": 304894,
+          "filename": "t9t242021.txt",
+          "sha256": "06f8391c2c5693b861b25694d69be5cbf3c88c6359c7201e1c974fbd81fe9af7",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242021.txt"
+        },
+        {
+          "bytes": 26307,
+          "filename": "t9t242023.txt",
+          "sha256": "46e2ef720bf781b9f1b86f2687d18706bf5d150685d4d34ab09e261f642512b8",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242023.txt"
+        },
+        {
+          "bytes": 123222,
+          "filename": "t9t242025.txt",
+          "sha256": "0736505fd9fdc8e63079d337b7e746e1d541e204adebe4f5c2d8bd6db9dc218b",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242025.txt"
+        },
+        {
+          "bytes": 187859,
+          "filename": "t9t242027.txt",
+          "sha256": "3e087777e2b5880ef1d72cec31486dc312507bde40d97c29bee5e3be7f326062",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242027.txt"
+        },
+        {
+          "bytes": 406301,
+          "filename": "t9t242029.txt",
+          "sha256": "1890ce0035908640c4e8392f7df84adc2c05735d277cf2a312b2a095a1a95768",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242029.txt"
+        },
+        {
+          "bytes": 129028,
+          "filename": "t9t242031.txt",
+          "sha256": "d7587fcf1d6cb10d5d1ad39470208610164be0a544565786ba0f569c4fe6c4fc",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242031.txt"
+        },
+        {
+          "bytes": 264157,
+          "filename": "t9t242033.txt",
+          "sha256": "d8db65bbd8d1fd1e51ae4813d2555992152406565ed4a0103d01d64ec1a4adb9",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242033.txt"
+        },
+        {
+          "bytes": 112616,
+          "filename": "t9t242035.txt",
+          "sha256": "ed08442bd56ffb9f34fa656ea9085b8606f87000fc2bc9bca7117ded10c5d985",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242035.txt"
+        },
+        {
+          "bytes": 151504,
+          "filename": "t9t242037.txt",
+          "sha256": "2199456876323470bc719bd71b7eeaca5d4ad946b7f42d490b7f57c8dc244ff8",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242037.txt"
+        },
+        {
+          "bytes": 224285,
+          "filename": "t9t242039.txt",
+          "sha256": "63c92a0d83c25dab63fd90d3554d0436c105b53ea23d7ddc8dfa02b5447852a7",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242039.txt"
+        },
+        {
+          "bytes": 231225,
+          "filename": "t9t242041.txt",
+          "sha256": "f614418f8415319356240160ac3d3558f6928afc23236ad598c6e894ebc7aab6",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242041.txt"
+        },
+        {
+          "bytes": 331116,
+          "filename": "t9t242043.txt",
+          "sha256": "79c397a2632b945f5cee19d5f089f7bb155f4381f683e21ebd8b00be476d57a4",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242043.txt"
+        },
+        {
+          "bytes": 350419,
+          "filename": "t9t242045.txt",
+          "sha256": "b8481cb89829d6f71333e166efd3f7dca5e5c6665188ae00bda769c31a5bff69",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242045.txt"
+        },
+        {
+          "bytes": 91511,
+          "filename": "t9t242047.txt",
+          "sha256": "309878a6c89e6178ab8d6ef04d9cc2f5f3a2440b32b92567c14ea32fd233ef43",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242047.txt"
+        },
+        {
+          "bytes": 290456,
+          "filename": "t9t242049.txt",
+          "sha256": "94a995a09986c56ebea53e3b3df3ba3d2a6c7031c5522bc9629ac5291fe7ce53",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242049.txt"
+        },
+        {
+          "bytes": 270481,
+          "filename": "t9t242051.txt",
+          "sha256": "478208d7c0a186ff63e1b433c8e5592abf4373fab99fa81e6e8d8d266b57d844",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242051.txt"
+        },
+        {
+          "bytes": 33531,
+          "filename": "t9t242053.txt",
+          "sha256": "a9418b2e0038b9b6d580f39203862c147abec3b83422e627d699d0b617168fbd",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242053.txt"
+        },
+        {
+          "bytes": 192246,
+          "filename": "t9t242055.txt",
+          "sha256": "557d2ce70310ddbb30155393efa05b389542f70cedc0b35a4144c0ecedc76d0b",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242055.txt"
+        },
+        {
+          "bytes": 45312,
+          "filename": "t9t242057.txt",
+          "sha256": "97919bca1cf6a1aa330843bf523abfc3dd4d304b02d77d1768d421d441ac5037",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242057.txt"
+        },
+        {
+          "bytes": 108300,
+          "filename": "t9t242059.txt",
+          "sha256": "96e41ce371820052913f42f92e04520cb1120072210e83661fbfd405ea460e04",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242059.txt"
+        },
+        {
+          "bytes": 135530,
+          "filename": "t9t242061.txt",
+          "sha256": "55607932683fa5bc1a07f778967f52350c572d0a4d0025785b080776ecddb669",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242061.txt"
+        },
+        {
+          "bytes": 205117,
+          "filename": "t9t242063.txt",
+          "sha256": "deea70806a4ff0fc4fce70a78483d3b96eb9046a25ad7227894631ae7abc3e53",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242063.txt"
+        },
+        {
+          "bytes": 134507,
+          "filename": "t9t242065.txt",
+          "sha256": "0096e2633dc172e9f1961cde49ebac672762e8cb544c6c469e2b2d5d21941d07",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242065.txt"
+        },
+        {
+          "bytes": 64044,
+          "filename": "t9t242067.txt",
+          "sha256": "29dabf7dcea33023cd810838b34c8b2d87dff3e0e3ce9f5c28f85919e2ac08af",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242067.txt"
+        },
+        {
+          "bytes": 297296,
+          "filename": "t9t242069.txt",
+          "sha256": "2bb6174c94e281d7217fa40939562098326161bb5f2dfa4ad051453df5ef5b9f",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242069.txt"
+        },
+        {
+          "bytes": 449266,
+          "filename": "t9t242071.txt",
+          "sha256": "dcb040d6713827efbb726ae9a80065c7f14e14886041380ac9d626b2796c0523",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242071.txt"
+        },
+        {
+          "bytes": 170053,
+          "filename": "t9t242073.txt",
+          "sha256": "1e92e0e0e4cc7ad963a699161bfd6214f728a0834036b990fb171409f6022314",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242073.txt"
+        },
+        {
+          "bytes": 207990,
+          "filename": "t9t242075.txt",
+          "sha256": "d82ab9c7819f2f08b699c410d84cbff805c689b51b252b134509b3ee99fa869f",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242075.txt"
+        },
+        {
+          "bytes": 444230,
+          "filename": "t9t242077.txt",
+          "sha256": "867d93ab3465776cb13dc6904071caf31de272d1c22daaf767fd3e1c22b52511",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242077.txt"
+        },
+        {
+          "bytes": 435099,
+          "filename": "t9t242079.txt",
+          "sha256": "fa43482cd2cad8679cd4c26aeed42528b2723a846fe26ce782ebc131ab7195aa",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242079.txt"
+        },
+        {
+          "bytes": 219291,
+          "filename": "t9t242081.txt",
+          "sha256": "78041ddf5e65c1948088b9120db5b654c4422b0460506f1994c5de1f817a285d",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242081.txt"
+        },
+        {
+          "bytes": 124224,
+          "filename": "t9t242083.txt",
+          "sha256": "0bdccd34a8fa26a5c60aa4d58f88b77e1e4cbcac59a34e11e1f00698e3575b5d",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242083.txt"
+        },
+        {
+          "bytes": 232855,
+          "filename": "t9t242085.txt",
+          "sha256": "d06fe9f95f1c3d8cf277db4267e7dfed296283c4d679e02fe3cc8516870df4d9",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242085.txt"
+        },
+        {
+          "bytes": 81058,
+          "filename": "t9t242087.txt",
+          "sha256": "bc9375b7bcc1d8d5c4b135ad804a86a10b8c7781ab9492e70ea908252cf6bbb6",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242087.txt"
+        },
+        {
+          "bytes": 252306,
+          "filename": "t9t242089.txt",
+          "sha256": "7644e6f1665e2bcc223c9989e4a4a4a7e75311802c59b5c186f59010b52d1e86",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242089.txt"
+        },
+        {
+          "bytes": 521258,
+          "filename": "t9t242091.txt",
+          "sha256": "f484a1797ed7480f729065815b321bacf1283c67a72ffa64bb4044ba21716f69",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242091.txt"
+        },
+        {
+          "bytes": 40028,
+          "filename": "t9t242093.txt",
+          "sha256": "a44e7c0bfa087a7cf1a6162213fe1b291f401bd786cb1a3e68707be00708cfbf",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242093.txt"
+        },
+        {
+          "bytes": 338262,
+          "filename": "t9t242095.txt",
+          "sha256": "136c1543f7e807580f3346c78e002b62d4f3198c2dc16dd3bf207c8c7b4aecd1",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242095.txt"
+        },
+        {
+          "bytes": 215833,
+          "filename": "t9t242097.txt",
+          "sha256": "e908ecf796fde9333e32db8d91369291b8a03f255d5f894a3c7e3c97cdec128e",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242097.txt"
+        },
+        {
+          "bytes": 104865,
+          "filename": "t9t242099.txt",
+          "sha256": "6c07ade23af1e1675c06a88f0d197deaf310fa806729e82e0b15fe7a435207e9",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242099.txt"
+        },
+        {
+          "bytes": 711164,
+          "filename": "t9t242101.txt",
+          "sha256": "2a1ae4fd5ad2823d2058a482c69742a43e0f5b03cb64f219ce2942aff57bb398",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242101.txt"
+        },
+        {
+          "bytes": 146316,
+          "filename": "t9t242103.txt",
+          "sha256": "3b99f4f3d452da734561e4638553b908c99a7fee60147f137dbb7196e4333a5d",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242103.txt"
+        },
+        {
+          "bytes": 75499,
+          "filename": "t9t242105.txt",
+          "sha256": "eb07541747dbbb36767a152a6aee1ffc1643f8df2d9798f3bfcc102c62e1f1d5",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242105.txt"
+        },
+        {
+          "bytes": 334847,
+          "filename": "t9t242107.txt",
+          "sha256": "345bb1d01e66de1821cee6de724b424c97c29c6ae94906e991f93958abc9f79f",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242107.txt"
+        },
+        {
+          "bytes": 90714,
+          "filename": "t9t242109.txt",
+          "sha256": "2308f6548383857c9f834065e6ee92ff6c3fa6915956f9995d44e9caa15df235",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242109.txt"
+        },
+        {
+          "bytes": 222348,
+          "filename": "t9t242111.txt",
+          "sha256": "6d593240f0111cd6c230b9c7a25b781c269e9514ea9dc2c78282ddbf5c0ae5e1",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242111.txt"
+        },
+        {
+          "bytes": 41357,
+          "filename": "t9t242113.txt",
+          "sha256": "f4f25b6aa7d3e8768c69a6d8256e835c68d088810d7e7ed4d2c3a69dbdcdf36c",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242113.txt"
+        },
+        {
+          "bytes": 148880,
+          "filename": "t9t242115.txt",
+          "sha256": "07a37d444cb8071228f8e96adf26050f9bdcaf16ce12d0b1338501863fe245e1",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242115.txt"
+        },
+        {
+          "bytes": 130501,
+          "filename": "t9t242117.txt",
+          "sha256": "8c90a28a7765ae8787535c6114d32bbb0ce2814ad600f30ae5c065c0752e5952",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242117.txt"
+        },
+        {
+          "bytes": 73799,
+          "filename": "t9t242119.txt",
+          "sha256": "042235875d3e4efb71922488c77edc916f504023950b52e0e6aa65b499e959ab",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242119.txt"
+        },
+        {
+          "bytes": 125672,
+          "filename": "t9t242121.txt",
+          "sha256": "0ed2503f0ca46e12108098803c577ed37deb4a83edfd0bfc6b59ee4bd2af512c",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242121.txt"
+        },
+        {
+          "bytes": 114004,
+          "filename": "t9t242123.txt",
+          "sha256": "3a4cbd6fba49b3134480d28288c59febb2e92670ad936fae28b0f414d433e27e",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242123.txt"
+        },
+        {
+          "bytes": 346924,
+          "filename": "t9t242125.txt",
+          "sha256": "5ed827b2a7e8e9ca55b394a111ef10885f8161a83c75db785a640a58ae2159f2",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242125.txt"
+        },
+        {
+          "bytes": 161236,
+          "filename": "t9t242127.txt",
+          "sha256": "45321458c943f5c304c9689bc3cf0e77a57c4f1ba09e25ca7cbf6bb2f1d51a27",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242127.txt"
+        },
+        {
+          "bytes": 480287,
+          "filename": "t9t242129.txt",
+          "sha256": "ad98972b7e1552882169f4b40e6673e3017f33dc26cf2244219d42b9441e4786",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242129.txt"
+        },
+        {
+          "bytes": 71517,
+          "filename": "t9t242131.txt",
+          "sha256": "c70bfe883d51cfd2acdf8415e70c9996fd23d8fa0a0a3d16137d74871a2cbef0",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242131.txt"
+        },
+        {
+          "bytes": 424468,
+          "filename": "t9t242133.txt",
+          "sha256": "e6201de92bd8740876f7148b1d583ded57bd669bdc3e5f3f1e5b92791eaa4be2",
+          "url": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/t9t242133.txt"
+        }
+      ],
+      "geographic_universe": "Pennsylvania 1990/2000 tabulation-block pairs",
+      "license_access": "Public federal data; acknowledge U.S. Census Bureau",
+      "population_universe": null,
+      "producer": "U.S. Census Bureau",
+      "product": "1990 tabulation block to Census 2000 tabulation block files",
+      "reference_vintage": "1990/2000",
+      "relative_path": "data/raw/census_1990_2000_block_relationship_pa",
+      "release_date": "2001-06-15 directory publication",
+      "retrieved_at": "2026-08-29T21:39:31.499724+00:00",
+      "schema": {
+        "fields": "1990 block, part flag, 2000 block, part flag",
+        "format": "67 county comma-delimited files without headers",
+        "published_area_or_population_weights": false
+      },
+      "source_id": "census_1990_2000_block_relationship_pa",
+      "url_template": "https://www2.census.gov/geo/relfiles/t9t2/st42_pennsylvania/{filename}"
+    },
+    {
+      "bytes": 208037115,
+      "crs": "EPSG:4269",
+      "effective_vintage": "Census 2000 tabulation geography",
+      "geographic_universe": "Census 2000 tabulation blocks in Pennsylvania",
+      "license_access": "Public federal data; acknowledge U.S. Census Bureau",
+      "population_universe": null,
+      "producer": "U.S. Census Bureau",
+      "product": "2010 TIGER/Line Census 2000 Pennsylvania tabulation blocks",
+      "reference_vintage": "2000",
+      "relative_path": "data/raw/census_2000_pa_blocks/tl_2010_42_tabblock00.zip",
+      "release_date": "2011-01-13 archive timestamp",
+      "retrieved_at": "2026-08-29T21:39:31.499724+00:00",
+      "schema": {
+        "format": "ESRI Shapefile",
+        "id": "BLKIDFP00"
+      },
+      "sha256": "a5771874f846018ddf7d3761939a8e9cd3ecdf8d34364caa53e84630707c85dc",
+      "source_id": "census_2000_pa_blocks",
+      "url": "https://www2.census.gov/geo/tiger/TIGER2010/TABBLOCK/2000/tl_2010_42_tabblock00.zip"
+    }
+  ]
+}

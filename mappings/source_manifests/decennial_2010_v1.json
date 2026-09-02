@@ -1,0 +1,107 @@
+{
+  "manifest_version": "1.0.0",
+  "sources": [
+    {
+      "crs": null,
+      "effective_vintage": "2010-04-01",
+      "geographic_universe": "2010 Census tabulation blocks in Pennsylvania",
+      "license_access": "Public federal data; cite U.S. Census Bureau",
+      "population_universe": "Standard total population, P0010001",
+      "producer": "U.S. Census Bureau",
+      "product": "2010 Census Redistricting Data PL 94-171 Summary File",
+      "reference_vintage": "2010-04-01",
+      "relative_path": "data/raw/census_2010_pa_pl/pa2010.pl.zip",
+      "release_date": "2011-03-09",
+      "retrieval_timestamp": "2026-08-29T16:11:05.730466+00:00",
+      "schema": {
+        "file01_member": "pa000012010.pl",
+        "format": "fixed-width geography plus comma-delimited File 01",
+        "geography_member": "pageo2010.pl",
+        "join": "LOGRECNO",
+        "metric": "P0010001 (File 01 field 6)"
+      },
+      "sha256": "3cf2460ea17d1be087d9b12700e45962b164f6233f8c1071ddc67ab55392951a",
+      "size_bytes": 40977899,
+      "source_id": "census_2010_pa_pl",
+      "url": "https://www2.census.gov/census_2010/01-Redistricting_File--PL_94-171/Pennsylvania/pa2010.pl.zip"
+    },
+    {
+      "crs": "EPSG:4269",
+      "effective_vintage": "2010 Census tabulation geography",
+      "geographic_universe": "2010 Census tabulation blocks in Pennsylvania",
+      "license_access": "Public federal data; acknowledge U.S. Census Bureau",
+      "population_universe": null,
+      "producer": "U.S. Census Bureau",
+      "product": "2010 TIGER/Line Pennsylvania tabulation blocks",
+      "reference_vintage": "2010",
+      "relative_path": "data/raw/census_2010_pa_blocks/tl_2010_42_tabblock10.zip",
+      "release_date": "2012-03-26 archive publication",
+      "retrieval_timestamp": "2026-08-29T16:11:12.067814+00:00",
+      "schema": {
+        "area_fields": [
+          "ALAND10",
+          "AWATER10"
+        ],
+        "format": "ESRI Shapefile",
+        "id": "GEOID10",
+        "layer": "tl_2010_42_tabblock10.shp"
+      },
+      "sha256": "fc33d93eb53e71b0d61c3aa35d496a8a8b8d192933d68ebef206ccbaa9e19152",
+      "size_bytes": 251807842,
+      "source_id": "census_2010_pa_blocks",
+      "url": "https://www2.census.gov/geo/tiger/TIGER2010/TABBLOCK/2010/tl_2010_42_tabblock10.zip"
+    },
+    {
+      "crs": null,
+      "effective_vintage": "comparability support product",
+      "geographic_universe": "2010 blocks related to 2020 Pennsylvania blocks; four incoming cross-state rows are excluded from the PA source universe",
+      "license_access": "Public federal data; acknowledge U.S. Census Bureau",
+      "population_universe": null,
+      "producer": "U.S. Census Bureau",
+      "product": "2010 Census block to 2020 Census block relationship file",
+      "reference_vintage": "2010/2020",
+      "relative_path": "data/raw/census_2010_2020_block_relationship_pa/TAB2010_TAB2020_ST42.zip",
+      "release_date": "2020-12-04 file timestamp",
+      "retrieval_timestamp": "2026-08-29T16:11:06.045815+00:00",
+      "schema": {
+        "format": "pipe-delimited UTF-8 text in ZIP",
+        "member": "tab2010_tab2020_st42_pa.txt",
+        "population_fields": [],
+        "weight_fields": [
+          "AREALAND_INT",
+          "AREAWATER_INT"
+        ]
+      },
+      "sha256": "6e8ac323b98bf7259dac59ae7000c14fa72ce38207f77648d08645bbea29a323",
+      "size_bytes": 5921745,
+      "source_id": "census_2010_2020_block_relationship_pa",
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/rel2020/t10t20/TAB2010_TAB2020_ST42.zip"
+    },
+    {
+      "crs": "EPSG:4269",
+      "effective_vintage": "2021-10-05",
+      "geographic_universe": "Pennsylvania corrected 2020 block fragments",
+      "license_access": "Public download; redistribution terms not stated",
+      "population_universe": null,
+      "producer": "Pennsylvania Legislative Reapportionment Commission",
+      "product": "2021-10-05 LRC Data Release No. 1b Data Set 1 geography",
+      "reference_vintage": "2020",
+      "relative_path": "data/raw/pa_lrc_2021_release_1b_geography/2021 LRC Data Release 1b - Geography.zip",
+      "retrieval_timestamp": "2026-08-07T21:10:01.965389+00:00",
+      "schema": {
+        "block_layer": "Geography/WP_Blocks.shp",
+        "format": "ESRI Shapefile",
+        "fragment_id": "GEOID20",
+        "target_fields": [
+          "STATEFP20",
+          "COUNTYFP20",
+          "VTDST20"
+        ]
+      },
+      "sha256": "14187001c627c6a16bf967415059408c4ef7007d366fd9105b5be30763250e3b",
+      "size_bytes": 338792424,
+      "source_id": "pa_lrc_2021_release_1b_geography",
+      "url": "https://www.redistricting.state.pa.us/resources/GISData/Census/2021/2021-DataSet1-WithoutPrisoner/2021%20LRC%20Data%20Release%201b%20-%20Geography.zip"
+    }
+  ]
+}

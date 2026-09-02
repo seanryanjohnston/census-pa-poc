@@ -94,7 +94,7 @@ REQUIRED_LRC_FIELDS = [
 def run(root: Path) -> dict[str, object]:
     """Execute the checksum-to-topology statewide fixed-target audit."""
     root = root.resolve()
-    artifact_dir = root / "artifacts/poc021"
+    artifact_dir = root / "artifacts/work/poc021"
     processed_dir = root / "data/processed/statewide_fixed_geography"
     artifact_dir.mkdir(parents=True, exist_ok=True)
     processed_dir.mkdir(parents=True, exist_ok=True)
@@ -161,7 +161,9 @@ def run(root: Path) -> dict[str, object]:
     write_json(artifact_dir / "qa_results.json", qa)
     (artifact_dir / "report.md").write_text(render_report(qa, assignments))
     if not qa["passed"]:
-        raise RuntimeError("POC021 QA failed; inspect artifacts/poc021/qa_results.json")
+        raise RuntimeError(
+            "POC021 QA failed; inspect artifacts/work/poc021/qa_results.json"
+        )
     return qa
 
 

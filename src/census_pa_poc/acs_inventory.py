@@ -18,7 +18,7 @@ EXPECTED_YEARS = set(range(2009, 2025))
 def run(root: Path) -> dict[str, object]:
     """Validate inventory fields and checksum-frozen public API metadata."""
     root = root.resolve()
-    artifact_dir = root / "artifacts/poc014"
+    artifact_dir = root / "artifacts/work/poc014"
     artifact_dir.mkdir(parents=True, exist_ok=True)
     inventory = load_inventory(root / "mappings/acs5_products.csv")
     manifest, profiles = build_metadata_manifest(root, inventory)
@@ -43,7 +43,9 @@ def run(root: Path) -> dict[str, object]:
     write_json(artifact_dir / "qa_results.json", qa)
     (artifact_dir / "report.md").write_text(render_report(qa, inventory))
     if not qa["passed"]:
-        raise RuntimeError("POC014 QA failed; inspect artifacts/poc014/qa_results.json")
+        raise RuntimeError(
+            "POC014 QA failed; inspect artifacts/work/poc014/qa_results.json"
+        )
     return qa
 
 

@@ -118,7 +118,7 @@ LRC_SOURCE = {
 def run(root: Path) -> dict[str, object]:
     """Freeze, validate, and profile the five official plan archives."""
     root = root.resolve()
-    artifact_dir = root / "artifacts/poc022"
+    artifact_dir = root / "artifacts/work/poc022"
     artifact_dir.mkdir(parents=True, exist_ok=True)
 
     manifest = build_manifest(root)
@@ -176,7 +176,9 @@ def run(root: Path) -> dict[str, object]:
         render_report(qa, profiles, kml_profile)
     )
     if not source_gate_passed:
-        raise RuntimeError("POC022 source gate failed; inspect artifacts/poc022")
+        raise RuntimeError(
+            "POC022 source gate failed; inspect artifacts/work/poc022"
+        )
     return qa
 
 

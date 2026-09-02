@@ -25,7 +25,7 @@ WEIGHT_TOLERANCE = 1e-9
 
 def run(root: Path) -> dict[str, object]:
     root = root.resolve()
-    artifact_dir = root / "artifacts/poc022"
+    artifact_dir = root / "artifacts/work/poc022"
     processed_dir = root / "data/processed/senate_overlays"
     artifact_dir.mkdir(parents=True, exist_ok=True)
     processed_dir.mkdir(parents=True, exist_ok=True)

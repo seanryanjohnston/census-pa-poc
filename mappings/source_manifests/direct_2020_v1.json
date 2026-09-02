@@ -1,0 +1,135 @@
+{
+  "manifest_version": "1.0.0",
+  "sources": [
+    {
+      "crs": null,
+      "effective_vintage": "2020-04-01",
+      "geographic_universe": "2020 Census tabulation blocks in Pennsylvania",
+      "license_access": "Public federal data; cite U.S. Census Bureau",
+      "population_universe": "Standard total population, P0010001",
+      "producer": "U.S. Census Bureau",
+      "product": "2020 Census State Redistricting Data PL 94-171 Summary File",
+      "reference_vintage": "2020-04-01",
+      "relative_path": "data/raw/census_2020_pa_pl/pa2020.pl.zip",
+      "release_date": "2021-08-12",
+      "retrieval_timestamp": "2026-08-07T21:09:42.662711+00:00",
+      "schema": {
+        "file01_member": "pa000012020.pl",
+        "format": "pipe-delimited legacy summary file",
+        "geography_member": "pageo2020.pl",
+        "join": "LOGRECNO",
+        "metric": "P0010001"
+      },
+      "sha256": "2d33a7dab29c8dd5692bbde203d253e06eebbc44fcbaa96b1caa958d454026ae",
+      "size_bytes": 57240396,
+      "source_id": "census_2020_pa_pl",
+      "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Pennsylvania/pa2020.pl.zip"
+    },
+    {
+      "crs": "EPSG:4269",
+      "effective_vintage": "2021-10-05",
+      "geographic_universe": "Pennsylvania corrected 2020 block fragments",
+      "license_access": "Public download; redistribution terms not stated",
+      "population_universe": "Standard total population, P0010001",
+      "producer": "Pennsylvania Legislative Reapportionment Commission",
+      "product": "2021-10-05 LRC Data Release No. 1b Data Set 1 geography",
+      "reference_vintage": "2020",
+      "relative_path": "data/raw/pa_lrc_2021_release_1b_geography/2021 LRC Data Release 1b - Geography.zip",
+      "retrieval_timestamp": "2026-08-07T21:10:01.965389+00:00",
+      "schema": {
+        "atomic_id": "GEOID20",
+        "format": "ESRI Shapefile",
+        "member": "Geography/WP_Blocks.shp",
+        "support_metric": "P0010001"
+      },
+      "sha256": "14187001c627c6a16bf967415059408c4ef7007d366fd9105b5be30763250e3b",
+      "size_bytes": 338792424,
+      "source_id": "pa_lrc_2021_release_1b_geography",
+      "url": "https://www.redistricting.state.pa.us/resources/GISData/Census/2021/2021-DataSet1-WithoutPrisoner/2021%20LRC%20Data%20Release%201b%20-%20Geography.zip"
+    },
+    {
+      "crs": "EPSG:4269",
+      "effective_vintage": "used for 2022-2026 elections",
+      "geographic_universe": "Pennsylvania State House districts",
+      "license_access": "Public official download; redistribution terms not stated",
+      "producer": "Pennsylvania Legislative Reapportionment Commission",
+      "product": "2021 Final State House district plan SHAPE",
+      "reference_vintage": "2021",
+      "relative_path": "data/raw/pa_house_plans/2021_final/2022 LRC-House-Final.zip",
+      "retrieval_timestamp": "2026-08-30T22:21:38.697676+00:00",
+      "schema": {
+        "district_field": "DISTRICT",
+        "format": "ESRI Shapefile",
+        "member": "2022 LRC-House-Final.shp"
+      },
+      "sha256": "11960e83f61416276d46205785adaf5dee1995ab21f05a1b5113b649e6c329f6",
+      "size_bytes": 3718116,
+      "source_id": "pa_house_2021_final",
+      "url": "https://www.redistricting.state.pa.us/Resources/GISData/Districts/Legislative/House/2021-Final/SHAPE/2022%20LRC-House-Final.zip"
+    },
+    {
+      "crs": null,
+      "effective_vintage": "used for 2022-2026 elections",
+      "geographic_universe": "LRC corrected 2020 block fragments",
+      "license_access": "Public official download; redistribution terms not stated",
+      "producer": "Pennsylvania Legislative Reapportionment Commission",
+      "product": "2021 Final State House block equivalency",
+      "reference_vintage": "2021",
+      "relative_path": "data/raw/pa_house_2021_block_equivalency/2022 LRC-House-Final.csv",
+      "retrieval_timestamp": "2026-08-30T22:22:01.311491+00:00",
+      "schema": {
+        "columns": [
+          "source_atomic_geoid",
+          "target_district_id"
+        ],
+        "format": "headerless CSV"
+      },
+      "sha256": "17e11f451196cf0b6253c01386592426f867949b76b189c084f04bbf24a92e15",
+      "size_bytes": 8216093,
+      "source_id": "pa_house_2021_final_block_equivalency",
+      "url": "https://redistricting.state.pa.us/Resources/GISData/Districts/Legislative/House/2021-Final/CSV/2022%20LRC-House-Final.csv"
+    },
+    {
+      "crs": "EPSG:4269",
+      "effective_vintage": "used for 2022-2026 elections",
+      "geographic_universe": "Pennsylvania State Senate districts",
+      "license_access": "Public official download; redistribution terms not stated",
+      "producer": "Pennsylvania Legislative Reapportionment Commission",
+      "product": "2021 Final State Senate district plan SHAPE",
+      "reference_vintage": "2021",
+      "relative_path": "data/raw/pa_senate_plans/2021_final/2022 LRC-Senate-Final.zip",
+      "retrieval_timestamp": "2026-08-09T18:17:49.622322+00:00",
+      "schema": {
+        "district_field": "DISTRICT",
+        "format": "ESRI Shapefile",
+        "member": "2022 LRC-Senate-Final.shp"
+      },
+      "sha256": "4dcfd5f111ddf7de58484585205ecc5b01631e4a1b20c0745889f741ec137e14",
+      "size_bytes": 1830027,
+      "source_id": "pa_senate_2021_final",
+      "url": "https://www.redistricting.state.pa.us/Resources/GISData/Districts/Legislative/Senate/2021-Final/SHAPE/2022%20LRC-Senate-Final.zip"
+    },
+    {
+      "crs": null,
+      "effective_vintage": "used for 2022-2026 elections",
+      "geographic_universe": "LRC corrected 2020 block fragments",
+      "license_access": "Public official download; redistribution terms not stated",
+      "producer": "Pennsylvania Legislative Reapportionment Commission",
+      "product": "2021 Final State Senate block equivalency",
+      "reference_vintage": "2021",
+      "relative_path": "data/raw/pa_senate_2021_block_equivalency/2022 LRC Senate Final.csv",
+      "retrieval_timestamp": "2026-08-29T15:43:47.541431+00:00",
+      "schema": {
+        "columns": [
+          "source_atomic_geoid",
+          "target_district_id"
+        ],
+        "format": "headerless CSV"
+      },
+      "sha256": "ff7a79d2da3df2094bebe9ab0f19d91bc2bfec8537f8d07a034b6b0d1b3dfbef",
+      "size_bytes": 8060318,
+      "source_id": "pa_senate_2021_final_block_equivalency",
+      "url": "https://www.redistricting.state.pa.us/Resources/GISData/Districts/Legislative/Senate/2021-Final/CSV/2022%20LRC%20Senate%20Final.csv"
+    }
+  ]
+}

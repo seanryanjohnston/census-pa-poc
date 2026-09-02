@@ -24,14 +24,14 @@ from census_pa_poc.validation import (
     write_json,
 )
 
-DEFINITIONS_PATH = "mappings/additive_metric_definitions_v1.csv"
+DEFINITIONS_PATH = "mappings/socioeconomic_metric_definitions_v1.csv"
 PRODUCTS_PATH = "mappings/acs5_products.csv"
 PARTITIONS_PATH = "mappings/legislative_population_partitions_v1.csv"
 PLANS_PATH = "mappings/legislative_plans_v1.csv"
 RAW_ROOT = "data/raw/acs5_socioeconomic_pa"
 CROSSWALK_ROOT = "data/processed/direct_legislative/poc029/acs_crosswalks"
 OUTPUT_ROOT = "data/processed/direct_legislative/poc036"
-ARTIFACT_ROOT = "artifacts/poc036"
+ARTIFACT_ROOT = "artifacts/work/poc036"
 YEARS = tuple(range(2009, 2025))
 CANONICAL_FAMILIES = {
     "education_attainment",

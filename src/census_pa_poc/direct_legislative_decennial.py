@@ -223,7 +223,7 @@ UNCERTAINTIES = {
 def run(root: Path) -> dict[str, object]:
     """Execute and validate all 22 direct decennial partitions."""
     root = root.resolve()
-    artifact_dir = root / "artifacts/poc029"
+    artifact_dir = root / "artifacts/work/poc029"
     manifest = build_decennial_manifest(root)
     require_supporting_hashes(manifest)
     write_json(artifact_dir / "decennial_input_manifest.json", manifest)
@@ -380,13 +380,13 @@ def build_partition_registry(root: Path, plans: gpd.GeoDataFrame) -> pd.DataFram
 
 
 def build_decennial_manifest(root: Path) -> dict[str, object]:
-    """Link accepted upstream manifests and freeze override evidence."""
+    """Link canonical source manifests and freeze override evidence."""
     upstream_paths = [
-        "artifacts/poc013/input_manifest.json",
-        "artifacts/poc012/input_manifest.json",
-        "artifacts/poc011/input_manifest.json",
-        "artifacts/poc028/input_manifest.json",
-        "artifacts/poc029/plan_input_manifest.json",
+        "mappings/source_manifests/decennial_1990_v1.json",
+        "mappings/source_manifests/decennial_2000_v1.json",
+        "mappings/source_manifests/decennial_2010_v1.json",
+        "mappings/source_manifests/direct_2020_v1.json",
+        "mappings/legislative_plans_v1.csv",
     ]
     upstream = []
     for relative_path in upstream_paths:
