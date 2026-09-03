@@ -15,6 +15,8 @@ aggregates. `POC039` closes the POC with complete model-ready House and Senate
 CSV panels for every general-election year from 1992 through 2026. `POC041`
 publishes those accepted aggregate panels through a bounded static explorer.
 
+[Explore the public POC039 V2 district data](https://seanryanjohnston.github.io/census-pa-poc/)
+
 ## Repository map
 
 - `docs/POC029_STATUS.md`: accepted direct historical result and limitations.

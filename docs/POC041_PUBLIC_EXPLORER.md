@@ -1,6 +1,6 @@
 # POC041 public V2 explorer release
 
-Status: **in progress — scoped release accepted; deployment pending**
+Status: **done — deployed and verified**
 
 `PD043` authorizes a public explorer over the accepted `POC039` V2 House and
 Senate panels. This bounded release publishes district-level tabular results
@@ -75,3 +75,13 @@ analytics, cookie, or credential.
 GitHub Actions deploys only `site/`. Every third-party action is pinned to an
 immutable commit SHA; the workflow verifies release hashes and JavaScript syntax
 before uploading the Pages artifact.
+
+## Deployment evidence
+
+- Public site: <https://seanryanjohnston.github.io/census-pa-poc/>
+- First successful workflow run: <https://github.com/seanryanjohnston/census-pa-poc/actions/runs/33714567011>
+- Local verification: all release hashes, Node syntax, Ruff, the marimo static
+  check, and all 81 tests pass.
+- Live verification: the deployed site loads the selected chamber, election,
+  metric, district, comparison, 18-point history, plan legend, rankings,
+  provenance, and versioned download links from the public URL.
