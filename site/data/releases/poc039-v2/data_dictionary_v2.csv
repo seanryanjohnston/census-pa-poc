@@ -1,0 +1,96 @@
+column_name,metric_family,unit,transformation,uncertainty
+election_id,identifier_or_provenance,text_or_flag,selected or copied from canonical mapping,not_applicable
+election_year,identifier_or_provenance,text_or_flag,selected or copied from canonical mapping,not_applicable
+election_date,identifier_or_provenance,text_or_flag,selected or copied from canonical mapping,not_applicable
+chamber,identifier_or_provenance,text_or_flag,selected or copied from canonical mapping,not_applicable
+district_id,identifier_or_provenance,text_or_flag,selected or copied from canonical mapping,not_applicable
+district_key,identifier_or_provenance,text_or_flag,selected or copied from canonical mapping,not_applicable
+target_plan_id,identifier_or_provenance,text_or_flag,selected or copied from canonical mapping,not_applicable
+target_plan_reference_vintage,identifier_or_provenance,text_or_flag,selected or copied from canonical mapping,not_applicable
+regular_contest,election,boolean,true for every House row; Senate true only for the regular odd/even class,not_applicable
+district_total_area_sq_km,area,square_kilometers,"EPSG:5070 area of the complete plan polygon, including water",not_applicable
+district_area_source_id,area,provenance,documents the legislative-plan GIS area calculation,not_applicable
+district_area_crs,area,provenance,documents the legislative-plan GIS area calculation,not_applicable
+district_area_water_treatment,area,provenance,documents the legislative-plan GIS area calculation,not_applicable
+total_population_estimate,total,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+total_population_moe,population,count,ACS 90% MOE when applicable; blank for decennial complete counts,interpret with population_moe_status
+population_source_product_id,identifier_or_provenance,text_or_flag,selected or copied from canonical mapping,not_applicable
+population_source_year,identifier_or_provenance,text_or_flag,selected or copied from canonical mapping,not_applicable
+population_source_period_start,identifier_or_provenance,text_or_flag,selected or copied from canonical mapping,not_applicable
+population_source_period_end,identifier_or_provenance,text_or_flag,selected or copied from canonical mapping,not_applicable
+population_source_release_date,identifier_or_provenance,text_or_flag,selected or copied from canonical mapping,not_applicable
+population_source_timing,identifier_or_provenance,text_or_flag,selected or copied from canonical mapping,not_applicable
+population_moe_status,population,enum,declares whether total_population_moe is an ACS MOE,decennial count rows have no sampling MOE
+education_bachelors_plus_estimate,education,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+education_bachelors_plus_moe,education,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+education_bachelors_plus_share,education,proportion_0_to_1,derived after district-level additive allocation,no ratio MOE reported
+education_below_high_school_estimate,education,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+education_below_high_school_moe,education,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+education_below_high_school_share,education,proportion_0_to_1,derived after district-level additive allocation,no ratio MOE reported
+education_high_school_estimate,education,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+education_high_school_moe,education,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+education_high_school_share,education,proportion_0_to_1,derived after district-level additive allocation,no ratio MOE reported
+education_population_25_plus_estimate,education,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+education_population_25_plus_moe,education,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+education_some_college_associate_estimate,education,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+education_some_college_associate_moe,education,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+education_some_college_associate_share,education,proportion_0_to_1,derived after district-level additive allocation,no ratio MOE reported
+employment_armed_forces_estimate,employment,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+employment_armed_forces_moe,employment,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+employment_armed_forces_share,employment,proportion_0_to_1,derived after district-level additive allocation,no ratio MOE reported
+employment_employed_estimate,employment,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+employment_employed_moe,employment,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+employment_employed_share,employment,proportion_0_to_1,derived after district-level additive allocation,no ratio MOE reported
+employment_not_in_labor_force_estimate,employment,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+employment_not_in_labor_force_moe,employment,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+employment_not_in_labor_force_share,employment,proportion_0_to_1,derived after district-level additive allocation,no ratio MOE reported
+employment_population_16_plus_estimate,employment,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+employment_population_16_plus_moe,employment,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+employment_unemployed_estimate,employment,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+employment_unemployed_moe,employment,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+employment_unemployed_share,employment,proportion_0_to_1,derived after district-level additive allocation,no ratio MOE reported
+poverty_poverty_status_determined_estimate,poverty,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+poverty_poverty_status_determined_moe,poverty,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+poverty_ratio_0_50_0_99_estimate,poverty,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+poverty_ratio_0_50_0_99_moe,poverty,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+poverty_ratio_0_50_0_99_share,poverty,proportion_0_to_1,derived after district-level additive allocation,no ratio MOE reported
+poverty_ratio_1_00_1_24_estimate,poverty,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+poverty_ratio_1_00_1_24_moe,poverty,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+poverty_ratio_1_00_1_24_share,poverty,proportion_0_to_1,derived after district-level additive allocation,no ratio MOE reported
+poverty_ratio_1_25_1_49_estimate,poverty,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+poverty_ratio_1_25_1_49_moe,poverty,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+poverty_ratio_1_25_1_49_share,poverty,proportion_0_to_1,derived after district-level additive allocation,no ratio MOE reported
+poverty_ratio_1_50_1_84_estimate,poverty,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+poverty_ratio_1_50_1_84_moe,poverty,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+poverty_ratio_1_50_1_84_share,poverty,proportion_0_to_1,derived after district-level additive allocation,no ratio MOE reported
+poverty_ratio_1_85_1_99_estimate,poverty,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+poverty_ratio_1_85_1_99_moe,poverty,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+poverty_ratio_1_85_1_99_share,poverty,proportion_0_to_1,derived after district-level additive allocation,no ratio MOE reported
+poverty_ratio_2_00_plus_estimate,poverty,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+poverty_ratio_2_00_plus_moe,poverty,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+poverty_ratio_2_00_plus_share,poverty,proportion_0_to_1,derived after district-level additive allocation,no ratio MOE reported
+poverty_under_0_50_estimate,poverty,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+poverty_under_0_50_moe,poverty,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+poverty_under_0_50_share,poverty,proportion_0_to_1,derived after district-level additive allocation,no ratio MOE reported
+employment_to_population_rate,employment,proportion_0_to_1,derived after district-level additive allocation,no ratio MOE reported
+civilian_unemployment_rate,civilian,proportion_0_to_1,derived after district-level additive allocation,no ratio MOE reported
+labor_force_participation_rate,labor,proportion_0_to_1,derived after district-level additive allocation,no ratio MOE reported
+poverty_below_poverty_line_estimate,poverty,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+poverty_below_poverty_line_approx_moe,poverty,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+poverty_below_poverty_line_share,poverty,proportion_0_to_1,derived after district-level additive allocation,no ratio MOE reported
+poverty_below_200_percent_estimate,poverty,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+poverty_below_200_percent_approx_moe,poverty,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+poverty_below_200_percent_share,poverty,proportion_0_to_1,derived after district-level additive allocation,no ratio MOE reported
+socioeconomic_source_product_id,identifier_or_provenance,text_or_flag,selected or copied from canonical mapping,not_applicable
+socioeconomic_source_year,identifier_or_provenance,text_or_flag,selected or copied from canonical mapping,not_applicable
+socioeconomic_source_period_start,identifier_or_provenance,text_or_flag,selected or copied from canonical mapping,not_applicable
+socioeconomic_source_period_end,identifier_or_provenance,text_or_flag,selected or copied from canonical mapping,not_applicable
+socioeconomic_source_release_date,identifier_or_provenance,text_or_flag,selected or copied from canonical mapping,not_applicable
+socioeconomic_source_timing,identifier_or_provenance,text_or_flag,selected or copied from canonical mapping,not_applicable
+socioeconomic_moe_status,socioeconomic,enum,declares whether socioeconomic MOEs are published ACS MOEs,decennial long-form sample estimates have blank MOEs
+statewide_population_estimate,statewide,allocated_count,direct aggregate or sum of mutually exclusive cells after allocation,90% ACS MOE; approx_moe uses RSS and omits covariance
+population_statewide_share,population,proportion_0_to_1,derived after district-level additive allocation,no ratio MOE reported
+chamber_mean_district_population,identifier_or_provenance,text_or_flag,selected or copied from canonical mapping,not_applicable
+population_deviation_from_chamber_mean_pct,population,percentage_points,derived from district and chamber totals,not_applicable
+population_per_total_sq_km,density,people_per_total_square_kilometer,population divided by total polygon area; natural log where named,not_applicable
+log_population_per_total_sq_km,density,natural_log,population divided by total polygon area; natural log where named,not_applicable

@@ -12,7 +12,8 @@ population on both 2021 Final plans without reusing total-population weights.
 `POC032` adds those two partitions to the explorer behind a distinct metric
 selector. `POC036` proves continuous education, employment, and poverty
 aggregates. `POC039` closes the POC with complete model-ready House and Senate
-CSV panels for every general-election year from 1992 through 2026.
+CSV panels for every general-election year from 1992 through 2026. `POC041`
+publishes those accepted aggregate panels through a bounded static explorer.
 
 ## Repository map
 
@@ -21,6 +22,8 @@ CSV panels for every general-election year from 1992 through 2026.
 - `docs/POC031_VAP_PROOF.md`: accepted current-plan voting-age population proof.
 - `docs/POC039_STATUS.md`: accepted district/election CSV contract, source
   timing, transformations, limitations, and hashes.
+- `docs/POC041_PUBLIC_EXPLORER.md`: bounded public-release scope, attribution,
+  licensing caveat, and deployment contract.
 - `data/exports/model_features/v2/`: corrected cutoff-safe model-facing CSVs,
   source-selection table, data dictionary, and usage README.
 - `artifacts/poc029/final_acceptance_qa.json`: retained population acceptance
@@ -32,6 +35,7 @@ CSV panels for every general-election year from 1992 through 2026.
 - `mappings/legislative_population_partitions_v1.csv`: accepted product/plan
   applicability without precinct identity.
 - `notebooks/explore_population.py`: read-only direct House/Senate explorer.
+- `site/`: dependency-free public V2 data explorer and versioned release.
 
 ## Replay the accepted direct proof
 

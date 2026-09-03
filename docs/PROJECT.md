@@ -32,8 +32,10 @@ Precinct geography is not an active target or intermediate.
 - `POC039` closes the POC with complete 1992–2026 House and Senate
   district-by-election CSV panels.
 
-The POC is closed by `POC039`. Its maintained surface is the direct population
-proof and QA totals, the current notebook, and the v2 House and Senate exports.
+The analytical POC is closed by `POC039`. Its maintained surface is the direct
+population proof and QA totals, the current notebook, the v2 House and Senate
+exports, and the bounded `POC041` public explorer release authorized by
+`PD043`.
 
 ## Current non-goals
 
@@ -42,7 +44,9 @@ proof and QA totals, the current notebook, and the v2 House and Senate exports.
 - Adding metric families beyond the accepted export columns.
 - Treating area weights as observed population distribution.
 - Treating derived ACS district MOEs as total uncertainty.
-- Publishing raw or derived data before redistribution terms are reviewed.
+- Publishing raw inputs, geometry, crosswalks, or generated artifacts outside
+  the scoped aggregate `POC041` release before redistribution terms are
+  reviewed.
 
 Some legacy-named modules remain because the direct pipeline imports their
 Census parsers, source constants, geometry loaders, or hashing helpers. Their

@@ -1,0 +1,622 @@
+{
+  "artifact_writes": {
+    "data_dictionary": "reused_identical",
+    "house": "reused_identical",
+    "senate": "reused_identical",
+    "source_selection": "reused_identical"
+  },
+  "checks": [
+    {
+      "check_id": "house:row_count",
+      "observed": 3654,
+      "passed": true
+    },
+    {
+      "check_id": "house:district_coverage",
+      "observed": {
+        "1992": 203,
+        "1994": 203,
+        "1996": 203,
+        "1998": 203,
+        "2000": 203,
+        "2002": 203,
+        "2004": 203,
+        "2006": 203,
+        "2008": 203,
+        "2010": 203,
+        "2012": 203,
+        "2014": 203,
+        "2016": 203,
+        "2018": 203,
+        "2020": 203,
+        "2022": 203,
+        "2024": 203,
+        "2026": 203
+      },
+      "passed": true
+    },
+    {
+      "check_id": "senate:row_count",
+      "observed": 900,
+      "passed": true
+    },
+    {
+      "check_id": "senate:district_coverage",
+      "observed": {
+        "1992": 50,
+        "1994": 50,
+        "1996": 50,
+        "1998": 50,
+        "2000": 50,
+        "2002": 50,
+        "2004": 50,
+        "2006": 50,
+        "2008": 50,
+        "2010": 50,
+        "2012": 50,
+        "2014": 50,
+        "2016": 50,
+        "2018": 50,
+        "2020": 50,
+        "2022": 50,
+        "2024": 50,
+        "2026": 50
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unique_chamber_election_district_key",
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "check_id": "no_missing_required_values",
+      "observed": [
+        {
+          "column": "total_population_moe",
+          "missing_count": 2530
+        },
+        {
+          "column": "education_bachelors_plus_moe",
+          "missing_count": 2530
+        },
+        {
+          "column": "education_below_high_school_moe",
+          "missing_count": 2530
+        },
+        {
+          "column": "education_high_school_moe",
+          "missing_count": 2530
+        },
+        {
+          "column": "education_population_25_plus_moe",
+          "missing_count": 2530
+        },
+        {
+          "column": "education_some_college_associate_moe",
+          "missing_count": 2530
+        },
+        {
+          "column": "employment_armed_forces_moe",
+          "missing_count": 2530
+        },
+        {
+          "column": "employment_employed_moe",
+          "missing_count": 2530
+        },
+        {
+          "column": "employment_not_in_labor_force_moe",
+          "missing_count": 2530
+        },
+        {
+          "column": "employment_population_16_plus_moe",
+          "missing_count": 2530
+        },
+        {
+          "column": "employment_unemployed_moe",
+          "missing_count": 2530
+        },
+        {
+          "column": "poverty_poverty_status_determined_moe",
+          "missing_count": 2530
+        },
+        {
+          "column": "poverty_ratio_0_50_0_99_moe",
+          "missing_count": 2530
+        },
+        {
+          "column": "poverty_ratio_1_00_1_24_moe",
+          "missing_count": 2530
+        },
+        {
+          "column": "poverty_ratio_1_25_1_49_moe",
+          "missing_count": 2530
+        },
+        {
+          "column": "poverty_ratio_1_50_1_84_moe",
+          "missing_count": 2530
+        },
+        {
+          "column": "poverty_ratio_1_85_1_99_moe",
+          "missing_count": 2530
+        },
+        {
+          "column": "poverty_ratio_2_00_plus_moe",
+          "missing_count": 2530
+        },
+        {
+          "column": "poverty_under_0_50_moe",
+          "missing_count": 2530
+        },
+        {
+          "column": "poverty_below_poverty_line_approx_moe",
+          "missing_count": 2530
+        },
+        {
+          "column": "poverty_below_200_percent_approx_moe",
+          "missing_count": 2530
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "positive_population_and_area",
+      "observed": {
+        "nonpositive_area": 0,
+        "nonpositive_population": 0
+      },
+      "passed": true
+    },
+    {
+      "check_id": "house_and_senate_statewide_population_agree",
+      "observed": "zero chamber delta in every election year",
+      "passed": true
+    },
+    {
+      "check_id": "house_and_senate_statewide_socioeconomic_counts_agree",
+      "observed": "maximum absolute count delta <= 1e-5 in every election year",
+      "passed": true
+    },
+    {
+      "check_id": "population_moe_status_matches_product",
+      "observed": [
+        {
+          "population_moe_status": "acs_90_percent_moe",
+          "population_source_product_id": "acs5_2010",
+          "row_count": 253
+        },
+        {
+          "population_moe_status": "acs_90_percent_moe",
+          "population_source_product_id": "acs5_2012",
+          "row_count": 253
+        },
+        {
+          "population_moe_status": "acs_90_percent_moe",
+          "population_source_product_id": "acs5_2014",
+          "row_count": 253
+        },
+        {
+          "population_moe_status": "acs_90_percent_moe",
+          "population_source_product_id": "acs5_2016",
+          "row_count": 253
+        },
+        {
+          "population_moe_status": "acs_90_percent_moe",
+          "population_source_product_id": "acs5_2018",
+          "row_count": 253
+        },
+        {
+          "population_moe_status": "acs_90_percent_moe",
+          "population_source_product_id": "acs5_2020",
+          "row_count": 253
+        },
+        {
+          "population_moe_status": "acs_90_percent_moe",
+          "population_source_product_id": "acs5_2022",
+          "row_count": 253
+        },
+        {
+          "population_moe_status": "acs_90_percent_moe",
+          "population_source_product_id": "acs5_2024",
+          "row_count": 253
+        },
+        {
+          "population_moe_status": "not_applicable_decennial_count",
+          "population_source_product_id": "dec_1990",
+          "row_count": 1265
+        },
+        {
+          "population_moe_status": "not_applicable_decennial_count",
+          "population_source_product_id": "dec_2000",
+          "row_count": 1265
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "socioeconomic_moe_status_matches_product",
+      "observed": [
+        {
+          "row_count": 253,
+          "socioeconomic_moe_status": "acs_90_percent_moe",
+          "socioeconomic_source_product_id": "acs5_2010"
+        },
+        {
+          "row_count": 253,
+          "socioeconomic_moe_status": "acs_90_percent_moe",
+          "socioeconomic_source_product_id": "acs5_2012"
+        },
+        {
+          "row_count": 253,
+          "socioeconomic_moe_status": "acs_90_percent_moe",
+          "socioeconomic_source_product_id": "acs5_2014"
+        },
+        {
+          "row_count": 253,
+          "socioeconomic_moe_status": "acs_90_percent_moe",
+          "socioeconomic_source_product_id": "acs5_2016"
+        },
+        {
+          "row_count": 253,
+          "socioeconomic_moe_status": "acs_90_percent_moe",
+          "socioeconomic_source_product_id": "acs5_2018"
+        },
+        {
+          "row_count": 253,
+          "socioeconomic_moe_status": "acs_90_percent_moe",
+          "socioeconomic_source_product_id": "acs5_2020"
+        },
+        {
+          "row_count": 253,
+          "socioeconomic_moe_status": "acs_90_percent_moe",
+          "socioeconomic_source_product_id": "acs5_2022"
+        },
+        {
+          "row_count": 253,
+          "socioeconomic_moe_status": "acs_90_percent_moe",
+          "socioeconomic_source_product_id": "acs5_2024"
+        },
+        {
+          "row_count": 1265,
+          "socioeconomic_moe_status": "not_published_decennial_long_form_sample_estimate",
+          "socioeconomic_source_product_id": "dec_socio_1990_stf3"
+        },
+        {
+          "row_count": 1265,
+          "socioeconomic_moe_status": "not_published_decennial_long_form_sample_estimate",
+          "socioeconomic_source_product_id": "dec_socio_2000_sf3"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "all_source_periods_end_by_election",
+      "observed": [
+        {
+          "latest_days_after_election": -672,
+          "source_family": "population",
+          "violating_rows": 0
+        },
+        {
+          "latest_days_after_election": -672,
+          "source_family": "socioeconomic",
+          "violating_rows": 0
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "all_source_products_released_by_election",
+      "observed": [
+        {
+          "latest_days_after_election": -236,
+          "source_family": "population",
+          "violating_rows": 0
+        },
+        {
+          "latest_days_after_election": -41,
+          "source_family": "socioeconomic",
+          "violating_rows": 0
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "plan_vintage_not_after_election",
+      "observed": [
+        {
+          "election_year": 1992,
+          "row_count": 253,
+          "target_plan_reference_vintage": "1991"
+        },
+        {
+          "election_year": 1994,
+          "row_count": 253,
+          "target_plan_reference_vintage": "1991"
+        },
+        {
+          "election_year": 1996,
+          "row_count": 253,
+          "target_plan_reference_vintage": "1991"
+        },
+        {
+          "election_year": 1998,
+          "row_count": 253,
+          "target_plan_reference_vintage": "1991"
+        },
+        {
+          "election_year": 2000,
+          "row_count": 253,
+          "target_plan_reference_vintage": "1991"
+        },
+        {
+          "election_year": 2002,
+          "row_count": 253,
+          "target_plan_reference_vintage": "2001"
+        },
+        {
+          "election_year": 2004,
+          "row_count": 253,
+          "target_plan_reference_vintage": "2001"
+        },
+        {
+          "election_year": 2006,
+          "row_count": 253,
+          "target_plan_reference_vintage": "2001"
+        },
+        {
+          "election_year": 2008,
+          "row_count": 253,
+          "target_plan_reference_vintage": "2001"
+        },
+        {
+          "election_year": 2010,
+          "row_count": 253,
+          "target_plan_reference_vintage": "2001"
+        },
+        {
+          "election_year": 2012,
+          "row_count": 253,
+          "target_plan_reference_vintage": "2001"
+        },
+        {
+          "election_year": 2014,
+          "row_count": 253,
+          "target_plan_reference_vintage": "2012"
+        },
+        {
+          "election_year": 2016,
+          "row_count": 253,
+          "target_plan_reference_vintage": "2012"
+        },
+        {
+          "election_year": 2018,
+          "row_count": 253,
+          "target_plan_reference_vintage": "2012"
+        },
+        {
+          "election_year": 2020,
+          "row_count": 253,
+          "target_plan_reference_vintage": "2012"
+        },
+        {
+          "election_year": 2022,
+          "row_count": 253,
+          "target_plan_reference_vintage": "2021"
+        },
+        {
+          "election_year": 2024,
+          "row_count": 253,
+          "target_plan_reference_vintage": "2021"
+        },
+        {
+          "election_year": 2026,
+          "row_count": 253,
+          "target_plan_reference_vintage": "2021"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "area_provenance_is_explicit_and_consistent",
+      "observed": "legislative-plan polygons; EPSG:5070; includes water",
+      "passed": true
+    },
+    {
+      "check_id": "no_surrounding_whitespace_in_text",
+      "observed": "all nonmissing text values equal their stripped form",
+      "passed": true
+    },
+    {
+      "check_id": "shares_and_rates_in_range",
+      "observed": "all bounded [0,1]",
+      "passed": true
+    },
+    {
+      "check_id": "education_categories_conserve",
+      "observed": "four education shares sum to one",
+      "passed": true
+    },
+    {
+      "check_id": "employment_categories_conserve",
+      "observed": "four employment shares sum to one",
+      "passed": true
+    },
+    {
+      "check_id": "poverty_categories_conserve",
+      "observed": "seven poverty shares sum to one",
+      "passed": true
+    }
+  ],
+  "column_count": 95,
+  "csv_sha256": {
+    "data_dictionary": "18c56238eb041f12649f3d6080efad4ab9b5068d64d0ea84f4dc8553e40ae34a",
+    "house": "46d7260b42bd52b45c3d271f28ca1d45a0e0b9a99c48d8bf87a3a857a9bc2e55",
+    "senate": "59641c43353ed1a295119428a4b62f75af4269be97e13dfa3a6341aaedbdbe58",
+    "source_selection": "1c0e525e25b3691ab930660d8b6f5c8c0dcdbdadbdbf5fd2db3fa1b2e21be2b9"
+  },
+  "density_definition": "Total population divided by full plan-polygon EPSG:5070 area, including water; not Census land-area density.",
+  "election_years": [
+    1992,
+    1994,
+    1996,
+    1998,
+    2000,
+    2002,
+    2004,
+    2006,
+    2008,
+    2010,
+    2012,
+    2014,
+    2016,
+    2018,
+    2020,
+    2022,
+    2024,
+    2026
+  ],
+  "excluded_incomplete_families": [
+    "historical_vap_and_cvap",
+    "age",
+    "historical_race_ethnicity",
+    "nativity_citizenship",
+    "household_income",
+    "housing_tenure",
+    "census_land_area_density"
+  ],
+  "input_hashes": {
+    "data/processed/direct_legislative/legislative_plans_1991_2021_v2.parquet": "401f228f813242d0800143dc405cdd89f3d03597707647ec65e211f855f6040e",
+    "data/processed/direct_legislative/poc029/acs_legislative_results_v1.parquet": "55275855c6204d0e7dba585363134000df87e4145ba198f337d900acfa1a6842",
+    "data/processed/direct_legislative/poc029/decennial_legislative_results_v1.parquet": "563f5176cd9e68083db15af1605c1aa78f7dbfbb93c74e89e0e781e828bc8f9e",
+    "data/processed/direct_legislative/poc036/socioeconomic_legislative_partitions_v1.parquet": "1a7adf89c658bcb03b2fe162dc73be18854327fbd10de807d0ba41d4db28330b",
+    "data/processed/direct_legislative/poc039_support/decennial_socioeconomic_legislative_v2.parquet": "764f584917e885f2b768bedddf0d317867f205dbd9ec99da26b30357181e38c2",
+    "mappings/acs5_products.csv": "47f3a18014161a4fa435ca57ac534fa0a4ecd43bf6b92b230e2545940441ef4a",
+    "mappings/model_election_years_v1.csv": "678fdcc9822aeb8c99516ec57115233c27f180fa89b85f5d2599025665c7ab7b",
+    "mappings/population_periods.csv": "3a45b52de90384f30e7838f1c4ce2b6bb156c9e32d4e3c2b7993167ad3cc4a71",
+    "mappings/socioeconomic_metric_definitions_v1.csv": "163ae0a4813ddb2a6036f28938cc1b21528231abda357722379ae067220a7f3e"
+  },
+  "logical_panel_hash": "a93d2048d1c5005fb0ba322064acda183a421cd2db9cbd8ba5affcde7f3d5372",
+  "passed": true,
+  "row_counts": {
+    "house": 3654,
+    "senate": 900
+  },
+  "smell_test_ranges": {
+    "civilian_unemployment_rate": {
+      "maximum": 0.2690255112796594,
+      "median": 0.057032973714500404,
+      "minimum": 0.019608728424494726
+    },
+    "education_bachelors_plus_share": {
+      "maximum": 0.803050511074297,
+      "median": 0.21319989841400275,
+      "minimum": 0.021614837838803563
+    },
+    "employment_to_population_rate": {
+      "maximum": 0.7525211132292423,
+      "median": 0.5845138759648992,
+      "minimum": 0.3414297313497937
+    },
+    "labor_force_participation_rate": {
+      "maximum": 0.7829969159184278,
+      "median": 0.624471178575817,
+      "minimum": 0.4389378496447129
+    },
+    "population_per_total_sq_km": {
+      "maximum": 14455.465347359219,
+      "median": 258.24224727884985,
+      "minimum": 9.480824006254634
+    },
+    "poverty_below_200_percent_share": {
+      "maximum": 0.7639077608879787,
+      "median": 0.2790999684231076,
+      "minimum": 0.05414096447412807
+    },
+    "poverty_below_poverty_line_share": {
+      "maximum": 0.5153376982907882,
+      "median": 0.10434838654387024,
+      "minimum": 0.017942145654729465
+    }
+  },
+  "stage": "model_ready_district_election_csv_v2",
+  "statewide_socioeconomic_transition_smell_test": [
+    {
+      "bachelors_plus_share": 0.17944343987729097,
+      "below_poverty_line_share": 0.1112711119725653,
+      "change_from_prior_election_bachelors_plus_share": null,
+      "change_from_prior_election_below_poverty_line_share": null,
+      "change_from_prior_election_civilian_unemployment_rate": null,
+      "change_from_prior_election_employment_to_population_rate": null,
+      "civilian_unemployment_rate": 0.05966006076486068,
+      "election_year": 1992,
+      "employment_to_population_rate": 0.5785838879415928,
+      "source_product_id": "dec_socio_1990_stf3"
+    },
+    {
+      "bachelors_plus_share": 0.17944343987729097,
+      "below_poverty_line_share": 0.1112711119725653,
+      "change_from_prior_election_bachelors_plus_share": 0.0,
+      "change_from_prior_election_below_poverty_line_share": 0.0,
+      "change_from_prior_election_civilian_unemployment_rate": 0.0,
+      "change_from_prior_election_employment_to_population_rate": 0.0,
+      "civilian_unemployment_rate": 0.05966006076486068,
+      "election_year": 2000,
+      "employment_to_population_rate": 0.5785838879415928,
+      "source_product_id": "dec_socio_1990_stf3"
+    },
+    {
+      "bachelors_plus_share": 0.2235140965396301,
+      "below_poverty_line_share": 0.1097746202635533,
+      "change_from_prior_election_bachelors_plus_share": 0.04407065666233914,
+      "change_from_prior_election_below_poverty_line_share": -0.0014964917090120045,
+      "change_from_prior_election_civilian_unemployment_rate": -0.0030285813741297365,
+      "change_from_prior_election_employment_to_population_rate": 0.004669663059950646,
+      "civilian_unemployment_rate": 0.056631479390730946,
+      "election_year": 2002,
+      "employment_to_population_rate": 0.5832535510015434,
+      "source_product_id": "dec_socio_2000_sf3"
+    },
+    {
+      "bachelors_plus_share": 0.2235140965396301,
+      "below_poverty_line_share": 0.1097746202635533,
+      "change_from_prior_election_bachelors_plus_share": 0.0,
+      "change_from_prior_election_below_poverty_line_share": 0.0,
+      "change_from_prior_election_civilian_unemployment_rate": 0.0,
+      "change_from_prior_election_employment_to_population_rate": 0.0,
+      "civilian_unemployment_rate": 0.056631479390730946,
+      "election_year": 2010,
+      "employment_to_population_rate": 0.5832535510015434,
+      "source_product_id": "dec_socio_2000_sf3"
+    },
+    {
+      "bachelors_plus_share": 0.2638318724599654,
+      "below_poverty_line_share": 0.12376347837263425,
+      "change_from_prior_election_bachelors_plus_share": 0.04031777592033531,
+      "change_from_prior_election_below_poverty_line_share": 0.01398885810908096,
+      "change_from_prior_election_civilian_unemployment_rate": 0.016340526135574088,
+      "change_from_prior_election_employment_to_population_rate": 0.0021990317966334993,
+      "civilian_unemployment_rate": 0.07297200552630503,
+      "election_year": 2012,
+      "employment_to_population_rate": 0.5854525827981769,
+      "source_product_id": "acs5_2010"
+    },
+    {
+      "bachelors_plus_share": 0.3516293301074018,
+      "below_poverty_line_share": 0.11709430739977716,
+      "change_from_prior_election_bachelors_plus_share": 0.014064695780566738,
+      "change_from_prior_election_below_poverty_line_share": -0.0007267283950508213,
+      "change_from_prior_election_civilian_unemployment_rate": -0.0011406711751662732,
+      "change_from_prior_election_employment_to_population_rate": -0.0010688270845568004,
+      "civilian_unemployment_rate": 0.05255532657358611,
+      "election_year": 2026,
+      "employment_to_population_rate": 0.5931670200318534,
+      "source_product_id": "acs5_2024"
+    }
+  ],
+  "support_hashes": {
+    "data/processed/direct_legislative/poc039_support/decennial_socioeconomic_legislative_v2.parquet": "764f584917e885f2b768bedddf0d317867f205dbd9ec99da26b30357181e38c2"
+  },
+  "task": "POC039",
+  "temporal_cutoff_policy": "Every source period ends on or before the election and every source product was released on or before the election; no future backfill."
+}

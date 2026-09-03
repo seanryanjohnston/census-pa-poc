@@ -14,6 +14,7 @@ Read in this order:
 10. [POC039 model-ready CSV status](POC039_STATUS.md)
 11. [Direct legislative explorer](DATA_EXPLORER.md)
 12. [Next steps](NEXT_STEPS.md)
+13. [POC041 public explorer release](POC041_PUBLIC_EXPLORER.md)
 
 The `docs/` tree is canonical for the direct legislative result. Superseded
 precinct-route material is available from Git history, not duplicated in the

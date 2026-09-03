@@ -17,6 +17,7 @@ Superseded precinct-era decisions remain available from Git history.
 | `PD040` | 2026-09-01 | Close the POC with complete model-ready CSV panels rather than requiring every inventoried P0 family. | Export one wide row per House or Senate district and 1992–2026 election year. Use the latest source released by the election when possible; when no socioeconomic source yet existed, use the earliest ACS five-year product as an explicitly typed future backfill on the election's actual plan. Include only complete, defensible metrics; defer incomplete demographic and household/housing families. Preserve Parquet proof artifacts as upstream evidence. Total-polygon-area density is allowed only under that exact label and must not be presented as Census land-area density. |
 | `PD041` | 2026-09-01 | Prohibit post-election reference periods in the model panel. | Supersede the future-backfill allowance in `PD040`. Every included source period must end on or before the election; product release must also precede the election. Use prior decennial long-form anchors where their concepts bridge cleanly, otherwise omit the unsupported metric rather than leak future information. Audit population and geometry-derived features under the same temporal rule. |
 | `PD042` | 2026-09-02 | Reduce the closed POC to the direct population proof, QA totals, current notebook, and v2 exports. | Rely on Git history for superseded experiments; keep required source manifests as canonical mappings rather than generated artifacts; retain only final population, notebook, and v2 export QA evidence. |
+| `PD043` | 2026-09-02 | Publish the accepted `POC039` V2 district-election panels as an immutable, checksum-verified GitHub Pages release from this POC repository. | Commit only the bounded public site, versioned aggregate CSVs, dictionary, source-selection metadata, QA summary, hashes, attribution, limitations, and reuse notice. Exclude legislative geometry, corrected fragments, raw sources, crosswalks, and other generated artifacts until their redistribution terms are accepted. Default the explorer to 2026 while retaining all 1992–2026 election years; a future release receives a new versioned directory rather than replacing V2. |
 
 ## Accepted limitations
 
@@ -30,5 +31,6 @@ Superseded precinct-era decisions remain available from Git history.
   limitation rather than using zero.
 - Two zero-estimate, water-only 2010 block groups outside the official 2001
   House polygons remain typed unassigned exceptions.
-- Publication remains blocked on a redistribution-terms review, not on the
-  analytical proof.
+- Publication of geometry, corrected fragments, raw sources, crosswalks, and
+  broader generated artifacts remains blocked on a redistribution-terms
+  review. `PD043` separately authorizes the bounded aggregate V2 release.

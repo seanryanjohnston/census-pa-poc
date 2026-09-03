@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#152f3d" />
+    <meta
+      name="description"
+      content="Explore cutoff-safe Census and ACS estimates for Pennsylvania State House and State Senate districts, 1992–2026."
+    />
+    <meta property="og:title" content="Pennsylvania Legislative District Explorer" />
+    <meta
+      property="og:description"
+      content="Explore the POC039 V2 district-by-election dataset, with sources, uncertainty, and downloadable data."
+    />
+    <meta property="og:type" content="website" />
+    <title>Pennsylvania Legislative District Explorer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#explorer">Skip to explorer</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="./" aria-label="Pennsylvania Legislative District Explorer home">
+          <span class="keystone" aria-hidden="true">PA</span>
+          <span>
+            <strong>District Data Explorer</strong>
+            <small>Pennsylvania House &amp; Senate</small>
+          </span>
+        </a>
+        <div class="header-actions">
+          <span class="release-pill">POC039 · V2</span>
+          <a href="https://github.com/seanryanjohnston/census-pa-poc">View source</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="explorer">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">1992–2026 · 4,554 district-election records</p>
+        <h1 id="page-title">Put a district’s numbers in context.</h1>
+        <p class="lede">
+          Explore cutoff-safe Census and ACS estimates across Pennsylvania’s legislative
+          districts. Start with the latest available election cycle, compare districts,
+          then trace every value back to its source product.
+        </p>
+      </section>
+
+      <section class="control-panel" aria-label="Explorer controls">
+        <div class="control-group segmented-control" role="group" aria-labelledby="chamber-label">
+          <span id="chamber-label" class="control-label">Chamber</span>
+          <div class="segments">
+            <button type="button" data-chamber="house" aria-pressed="true">State House</button>
+            <button type="button" data-chamber="senate" aria-pressed="false">State Senate</button>
+          </div>
+        </div>
+
+        <label class="control-group">
+          <span class="control-label">Election year</span>
+          <select id="year-select"></select>
+        </label>
+
+        <label class="control-group metric-control">
+          <span class="control-label">Measure</span>
+          <select id="metric-select"></select>
+        </label>
+
+        <label class="control-group">
+          <span class="control-label">Focus district</span>
+          <select id="district-select"></select>
+        </label>
+
+        <label class="control-group">
+          <span class="control-label">Compare with</span>
+          <select id="compare-select"></select>
+        </label>
+      </section>
+
+      <div id="status" class="status" role="status" aria-live="polite">
+        Loading the House panel…
+      </div>
+
+      <div id="dashboard" class="dashboard" hidden>
+        <section class="summary-grid" aria-label="Selected district summary">
+          <article class="summary-card summary-primary">
+            <p class="card-label" id="selected-district-label">House District 1</p>
+            <p class="big-value" id="selected-value">—</p>
+            <p class="comparison" id="selected-comparison">—</p>
+          </article>
+
+          <article class="summary-card">
+            <p class="card-label">Statewide estimate</p>
+            <p class="card-value" id="statewide-value">—</p>
+            <p class="card-note" id="statewide-note">Across all districts</p>
+          </article>
+
+          <article class="summary-card">
+            <p class="card-label">Typical district</p>
+            <p class="card-value" id="median-value">—</p>
+            <p class="card-note">Median for this chamber and year</p>
+          </article>
+
+          <article class="summary-card source-card">
+            <p class="card-label">Source product</p>
+            <p class="source-value" id="source-product">—</p>
+            <p class="card-note" id="source-note">—</p>
+          </article>
+        </section>
+
+        <section class="analysis-grid">
+          <article class="panel trend-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="section-kicker">District history</p>
+                <h2 id="trend-title">District 1 over time</h2>
+              </div>
+              <div id="plan-legend" class="legend" aria-label="Legislative plan colors"></div>
+            </div>
+            <div id="trend-chart" class="chart" role="group" aria-label="District history chart">
+              <div id="trend-tooltip" class="chart-tooltip" role="tooltip" hidden></div>
+            </div>
+            <p class="chart-note">
+              Solid colors identify each legislative plan; dashed joins cross a plan
+              change. The same district number may describe different geography after
+              redistricting.
+            </p>
+          </article>
+
+          <aside class="panel detail-panel" aria-labelledby="detail-title">
+            <p class="section-kicker">Record details</p>
+            <h2 id="detail-title">How this estimate was made</h2>
+            <dl class="detail-list">
+              <div><dt>Election</dt><dd id="detail-election">—</dd></div>
+              <div><dt>Plan</dt><dd id="detail-plan">—</dd></div>
+              <div><dt>Population source</dt><dd id="detail-pop-source">—</dd></div>
+              <div><dt>Socioeconomic source</dt><dd id="detail-socio-source">—</dd></div>
+              <div><dt>Uncertainty</dt><dd id="detail-uncertainty">—</dd></div>
+              <div><dt>Regular contest</dt><dd id="detail-contest">—</dd></div>
+            </dl>
+          </aside>
+        </section>
+
+        <section class="panel ranking-panel" aria-labelledby="ranking-title">
+          <div class="panel-heading ranking-heading">
+            <div>
+              <p class="section-kicker">Chamber comparison</p>
+              <h2 id="ranking-title">District rankings</h2>
+            </div>
+            <label class="search-control">
+              <span class="visually-hidden">Filter districts</span>
+              <input id="district-filter" type="search" inputmode="numeric" placeholder="Find district" />
+            </label>
+          </div>
+          <div class="distribution" id="distribution" aria-hidden="true"></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Rank</th>
+                  <th scope="col">District</th>
+                  <th scope="col" id="metric-column-label">Value</th>
+                  <th scope="col" id="compare-column-label">Change</th>
+                  <th scope="col">Source</th>
+                </tr>
+              </thead>
+              <tbody id="ranking-body"></tbody>
+            </table>
+          </div>
+          <p id="table-count" class="table-count"></p>
+        </section>
+
+        <section class="release-section" aria-labelledby="release-title">
+          <div>
+            <p class="section-kicker">Release &amp; methodology</p>
+            <h2 id="release-title">A complete panel, not a “latest” overwrite.</h2>
+            <p>
+              V2 preserves all 18 even-year election cycles and opens on 2026. Each row
+              identifies its applicable plan and cutoff-safe source products. Values are
+              modeled district estimates, not observations of individual people.
+            </p>
+          </div>
+          <div class="download-list" aria-label="Download release files">
+            <a href="data/releases/poc039-v2/pa_house_district_election_features_v2.csv" download>
+              <span>House panel</span><small>CSV · 3,654 rows</small>
+            </a>
+            <a href="data/releases/poc039-v2/pa_senate_district_election_features_v2.csv" download>
+              <span>Senate panel</span><small>CSV · 900 rows</small>
+            </a>
+            <a href="data/releases/poc039-v2/data_dictionary_v2.csv" download>
+              <span>Data dictionary</span><small>CSV · 95 fields</small>
+            </a>
+            <a href="data/releases/poc039-v2/model_export_qa_v2.json" download>
+              <span>Validation evidence</span><small>JSON · all checks pass</small>
+            </a>
+          </div>
+        </section>
+
+        <section class="caveat" aria-labelledby="caveat-title">
+          <div class="caveat-mark" aria-hidden="true">i</div>
+          <div>
+            <h2 id="caveat-title">Read before reuse</h2>
+            <p>
+              ACS margins of error are 90% margins and do not include geographic-allocation
+              uncertainty. The 1990 and 2000 socioeconomic estimates have no published
+              cell-level margins. District geometry is intentionally not redistributed in
+              this release while Pennsylvania LRC reuse terms remain unstated.
+            </p>
+            <p>
+              Source: U.S. Census Bureau and Pennsylvania Legislative Reapportionment
+              Commission. See the <a href="data/releases/poc039-v2/README.md">release notes</a>
+              and <a href="data/releases/poc039-v2/METRIC_CALCULATIONS.md">metric calculations</a>.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <p>Built for transparent review of Pennsylvania legislative district estimates.</p>
+      <p><a href="https://github.com/seanryanjohnston/census-pa-poc/issues">Report a data question</a></p>
+    </footer>
+
+    <noscript>
+      <div class="noscript">This explorer needs JavaScript. The downloadable CSV files remain available above.</div>
+    </noscript>
+  </body>
+</html>
